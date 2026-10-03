@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Estación Meteo · Proyecto Agro Sostenible Piura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef4f1;--panel:#fff;--ink:#12302b;--mute:#4f6b64;--line:#cfdcd6;--leaf:#2f7d52;--sun:#d98f0b;--water:#2a6fa8;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1f1c;--panel:#162b27;--ink:#e6f1ed;--mute:#9db8b0;--line:#2b4540;--leaf:#5cc08a;--sun:#f0b43c;--water:#6bb0e6}}
+:root[data-theme="dark"]{--bg:#0f1f1c;--panel:#162b27;--ink:#e6f1ed;--mute:#9db8b0;--line:#2b4540;--leaf:#5cc08a;--sun:#f0b43c;--water:#6bb0e6}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,sans-serif;line-height:1.15;margin:0}
+a{color:var(--leaf)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;gap:22px;align-items:center;overflow-x:auto;height:52px;white-space:nowrap}
+nav b{font-family:"Bricolage Grotesque",sans-serif;margin-right:auto}
+nav a{text-decoration:none;color:var(--mute);font-weight:600}
+nav a:hover,nav a:focus-visible{color:var(--ink)}
+header.hero{padding:44px 0 20px}
+header.hero h1{font-size:clamp(34px,6vw,56px);max-width:16ch}
+header.hero p{max-width:60ch;color:var(--mute);margin:14px 0 0}
+section{padding:34px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:28px;margin-bottom:6px}
+.sub{color:var(--mute);margin:0 0 20px}
+.now{display:grid;grid-template-columns:minmax(180px,1fr) 2fr;gap:28px;align-items:end}
+.big{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(64px,12vw,112px);line-height:1;color:var(--sun)}
+.big small{font-size:.35em;color:var(--mute)}
+dl.r{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));margin:0;border-top:1px solid var(--line)}
+dl.r div{padding:12px 14px 12px 0;border-bottom:1px solid var(--line)}
+dl.r dt{color:var(--mute);font-size:15px}dl.r dd{margin:0;font:700 24px "Bricolage Grotesque",sans-serif}
+.tag{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:14px;color:var(--mute);margin-top:14px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+select,input,button,.btn{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer}
+select:focus-visible,input:focus-visible,button:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid var(--water);outline-offset:2px}
+.chart{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;height:340px}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-top:22px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-variant-numeric:tabular-nums}
+th,td{text-align:right;padding:8px 12px;border-bottom:1px solid var(--line)}th:first-child,td:first-child{text-align:left}
+th{color:var(--mute);font-weight:600;background:var(--bg)}
+.soc{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.soc a.btn{display:block;text-decoration:none;padding:18px}
+.soc strong{display:block;font:700 20px "Bricolage Grotesque",sans-serif;color:var(--ink)}
+.soc span{color:var(--mute)}
+.ideas{columns:2 280px;column-gap:32px;margin:0;padding-left:20px}.ideas li{margin-bottom:8px;break-inside:avoid}
+footer{padding:28px 0;color:var(--mute);font-size:15px;border-top:1px solid var(--line)}
+@media(max-width:700px){.now{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Estación Meteo</b><a href="#hoy">Clima de hoy</a><a href="#registro">Registro y gráficas</a><a href="#novedades">Novedades</a><a href="#proyecto">Proyecto</a></div></nav>
+
+<header class="hero"><div class="wrap">
+<h1>El clima de nuestra estación, al día</h1>
+<p>Datos medidos por la estación meteorológica del proyecto en Piura: lo que pasa hoy y cómo ha cambiado en los últimos días.</p>
+<span class="tag" id="estado">Cargando datos…</span>
+</div></header>
+
+<section id="hoy"><div class="wrap">
+<h2>Clima de hoy</h2><p class="sub">Última lectura de la estación PERU.</p>
+<div class="now">
+ <div class="big" id="bigT">–<small>°C</small></div>
+ <dl class="r" id="cards"></dl>
+</div></div></section>
+
+<section id="registro"><div class="wrap">
+<h2>Registro y gráficas</h2><p class="sub">Elige el parámetro y el periodo para ver su evolución.</p>
+<div class="tools">
+ <label>Parámetro <select id="par"></select></label>
+ <label>Periodo <select id="per"><option value="1">Hoy</option><option value="7" selected>Últimos 7 días</option><option value="30">Últimos 30 días</option><option value="r">Rango de fechas</option></select></label>
+ <span id="rg" hidden><label>Desde <input type="date" id="d1"></label> <label>Hasta <input type="date" id="d2"></label></span>
+</div>
+<div class="chart"><canvas id="ch" aria-label="Gráfica del parámetro elegido"></canvas></div>
+<div class="scroll"><table><thead><tr><th>Fecha y hora</th><th>Temp °C</th><th>Humedad %</th><th>Presión hPa</th><th>Ráfaga km/h</th><th>Rocío °C</th><th>Viento km/h</th><th>Radiación W/m²</th></tr></thead><tbody id="tb"></tbody></table></div>
+<p class="sub" style="margin-top:14px"><a href="data/lecturas.csv" download>Descargar el historial completo (CSV)</a></p>
+</div></section>
+
+<section id="novedades"><div class="wrap">
+<h2>Novedades</h2><p class="sub">Publicaciones y avances del proyecto en redes.</p>
+<div class="soc">
+ <a class="btn" href="https://www.instagram.com/agrososteniblepiura/" target="_blank" rel="noopener"><strong>Instagram</strong><span>@agrososteniblepiura</span></a>
+ <a class="btn" href="https://www.facebook.com/share/1CCjnh2Cut/" target="_blank" rel="noopener"><strong>Facebook</strong><span>Página del proyecto</span></a>
+</div>
+</div></section>
+
+<section id="proyecto"><div class="wrap">
+<h2>Sobre el proyecto</h2>
+<p class="sub">Aquí irá la descripción, el equipo y el contacto.</p>
+<h3 style="font-size:20px;margin-bottom:10px">Ideas por incluir</h3>
+<ul class="ideas">
+ <li>Resumen diario con máxima, mínima y promedio.</li>
+ <li>Comparar dos periodos en una misma gráfica.</li>
+ <li>Avisos cuando haya valores extremos.</li>
+ <li>Descarga de los datos en CSV.</li>
+</ul></div></section>
+<footer><div class="wrap">Fuente de los datos: AWX Online Utility, DPS-Promatic. Los datos se actualizan solos cuando la estación envía una lectura nueva.</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+var P=[["Temperatura (°C)","temp","#d98f0b"],["Humedad relativa (%)","rh","#2a6fa8"],["Presión atmosférica (hPa)","press","#2f7d52"],["Viento promedio (km/h)","was","#2f7d52"],["Ráfaga de viento (km/h)","wgust","#2f7d52"],["Radiación solar (W/m²)","sun","#d98f0b"],["Punto de rocío (°C)","dp","#2a6fa8"],["Temperatura del suelo (°C)","soilt","#d98f0b"],["Humedad del suelo (cb: 0 mojado, 200 seco)","soilw","#2a6fa8"],["Lluvia del intervalo (rf)","rf","#2a6fa8"],["Hoja mojada (0 mojada, 15 seca)","leaf","#2f7d52"]];
+var $=function(i){return document.getElementById(i)},D=[],chart,sel=$("par"),per=$("per");
+sel.innerHTML=P.map(function(p,i){return "<option value="+i+">"+p[0]+"</option>"}).join("");
+function iso(d){return d.toISOString().slice(0,10)}
+var P0,T0=0;
+function datos(){if(!P0||Date.now()-T0>6e4){T0=Date.now();P0=fetch("data/reciente.json?t="+Math.floor(Date.now()/6e4)).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){return j.rows.map(function(r){var o={};j.cols.forEach(function(c,i){o[c]=r[i]});return o})})}return P0}
+function f(v,u){return v==null?"–":v+(u?" "+u:"")}
+function dm(t){return t.slice(8,10)+"/"+t.slice(5,7)+" "+t.slice(11)}
+function latest(){datos().then(function(A){var L=A[A.length-1];L.minutes_ago=Math.round((Date.now()-5*36e5-Date.parse(L.ts+":00Z"))/6e4);L.delayed=L.minutes_ago>45;
+ $("bigT").innerHTML=L.temp.toFixed(1)+"<small>°C</small>";
+ $("cards").innerHTML=[["Humedad",f(L.rh,"%")],["Presión",f(L.press,"hPa")],["Rocío",f(L.dp,"°C")],["Viento",f(L.was,"km/h")],["Ráfaga",f(L.wgust,"km/h")],["Radiación",f(L.sun,"W/m²")],["Suelo",f(L.soilt,"°C")],["Humedad del suelo",f(L.soilw,"cb")],["Lluvia hoy",f(L.drf)],["Batería",f(L.vbatt,"V")]].map(function(x){return "<div><dt>"+x[0]+"</dt><dd>"+x[1]+"</dd></div>"}).join("");
+ $("estado").textContent=(L.delayed?"Sin lecturas nuevas. ":"")+"Última lectura: "+dm(L.ts)+" (hace "+L.minutes_ago+" min)"+(L.vbatt<12?" · Batería baja":"");
+}).catch(function(){$("estado").textContent="Aún no hay datos para mostrar"})}
+function span(){var v=per.value,t=new Date(Date.now()-5*36e5),b=iso(t); // fecha de Perú (UTC-5)
+ if(v=="r")return [$("d1").value||b,$("d2").value||b];
+ return [iso(new Date(t.getTime()-(v-1)*864e5)),b]}
+function load(){var s=span();datos().then(function(A){D=A.filter(function(r){var d=r.ts.slice(0,10);return d>=s[0]&&d<=s[1]});draw();table()}).catch(function(){})}
+function table(){$("tb").innerHTML=D.slice(-60).reverse().map(function(r){return "<tr><td>"+dm(r.ts)+"</td>"+["temp","rh","press","wgust","dp","was","sun"].map(function(k){return "<td>"+f(r[k])+"</td>"}).join("")+"</tr>"}).join("")}
+function draw(){var p=P[sel.value],css=getComputedStyle(document.documentElement),tick=css.getPropertyValue("--mute").trim(),grid=css.getPropertyValue("--line").trim(),lab=[],dat=[],prev=null;
+ D.forEach(function(r){var t=new Date(r.ts).getTime();if(prev&&t-prev>45*6e4){lab.push("");dat.push(null)} // hueco: no une los puntos
+  lab.push(per.value=="1"?r.ts.slice(11):dm(r.ts));dat.push(r[p[1]]);prev=t});
+ if(chart)chart.destroy();
+ try{chart=new Chart($("ch"),{type:"line",data:{labels:lab,datasets:[{label:p[0],data:dat,borderColor:p[2],backgroundColor:p[2]+"22",fill:true,tension:.3,spanGaps:false,pointRadius:D.length>120?0:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:tick}}},scales:{x:{ticks:{color:tick,maxTicksLimit:10},grid:{color:grid}},y:{ticks:{color:tick},grid:{color:grid}}}}})}catch(e){}}
+sel.addEventListener("change",draw);
+per.addEventListener("change",function(){$("rg").hidden=per.value!="r";load()});
+$("d1").addEventListener("change",load);$("d2").addEventListener("change",load);
+if(window.matchMedia)window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
+latest();load();setInterval(latest,300000);setInterval(load,300000);
+</script>
+</body>
+</html>
