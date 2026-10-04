@@ -17,11 +17,18 @@ body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.6 "Source S
 h1,h2,h3,.big{font-family:"Bricolage Grotesque",Georgia,sans-serif;line-height:1.15;margin:0;color:var(--ink)}
 a{color:var(--leaf)}.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 .bar{position:sticky;top:0;z-index:5;background:var(--panel);border-bottom:1px solid var(--line)}
-.bar-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.brand img{height:40px;width:auto}.brand b{display:block;font:700 15px/1.2 "Bricolage Grotesque",sans-serif}.brand small{color:var(--mute);font-size:13px}
-nav{display:flex;gap:20px;overflow-x:auto}nav a{text-decoration:none;color:var(--mute);font-weight:600;white-space:nowrap;padding:6px 0}
-nav a:hover{color:var(--leaf)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:8px 20px;padding-top:8px;padding-bottom:8px;min-height:68px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);flex:1 1 0;min-width:0}
+.brand img{height:44px;width:auto;background:#fff;border-radius:10px;padding:4px 6px;flex:none}.brand b{display:block;font:700 16px/1.25 "Bricolage Grotesque",sans-serif;text-wrap:balance;max-width:36ch}.brand small{color:var(--mute);font-size:14px}
+nav{display:flex;gap:22px}nav a{text-decoration:none;color:var(--mute);font-weight:600;white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{color:var(--leaf)}nav a.on{color:var(--leaf);border-bottom-color:var(--sun)}
+.menu-btn{display:none;align-items:center;gap:10px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 14px;font:600 16px "Source Sans 3",sans-serif;cursor:pointer}
+.menu-btn i{display:grid;gap:4px}.menu-btn i b{display:block;width:20px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s,opacity .2s}
+.menu-btn[aria-expanded=true] i b:nth-child(1){transform:translateY(6px) rotate(45deg)}.menu-btn[aria-expanded=true] i b:nth-child(2){opacity:0}.menu-btn[aria-expanded=true] i b:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:480px){.brand b{font-size:14.5px}.brand img{height:40px}.menu-btn{padding:11px 12px}.menu-btn span{display:none}}
+@media(max-width:900px){.menu-btn{display:inline-flex}
+ nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--panel);border-bottom:1px solid var(--line);box-shadow:0 14px 24px rgba(0,0,0,.18);padding:6px 20px 12px}
+ nav.open{display:flex}nav a{font-size:18px;padding:14px 4px;border-bottom:1px solid var(--line)}nav a:last-child{border-bottom:0}}
 a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 .hero{background:#0a2f1e repeating-conic-gradient(from 0deg at 88% 125%,rgba(254,196,24,.13) 0 5deg,transparent 5deg 15deg);color:#e9f3ea}
 .hero-in{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:end;padding:56px 20px 48px}
@@ -49,17 +56,32 @@ table{border-collapse:collapse;width:100%;min-width:720px;font-variant-numeric:t
 th,td{text-align:right;padding:9px 12px;border-bottom:1px solid var(--line)}th:first-child,td:first-child{text-align:left}th{color:var(--mute);font-weight:600;background:var(--bg)}
 .social{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;min-height:200px}.card h3{margin-bottom:14px}
-.fb-card{display:grid;gap:14px;justify-items:start}.fb-card p{margin:0;color:var(--mute)}
+.fb-card{display:grid;gap:12px;justify-items:start}.fb-card b{font:700 18px "Bricolage Grotesque",sans-serif;color:var(--ink)}.fb-card p{margin:0;color:var(--mute)}
+.fbw{background:#fff;border-radius:10px;overflow:hidden;display:flex;justify-content:center;max-width:100%}
+.ic{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:12px;color:#fff;flex:none}
+.ic svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic.fb{background:#1877f2}.ic.ig{background:linear-gradient(45deg,#f9a63a,#e1306c,#7a3bd1)}.ic.mail{background:#d93025}
+.ctg{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);gap:16px}
+.ct{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink);min-width:0}
+.ct:hover{border-color:var(--leaf)}.ct b{display:block;font:700 17px "Bricolage Grotesque",sans-serif}.ct small{color:var(--mute);font-size:15px;overflow-wrap:anywhere}
+.fl{display:flex;align-items:center;gap:14px}.fl img{height:46px;background:#fff;border-radius:10px;padding:4px 6px}.fi{display:flex;gap:10px}
 .two{display:grid;grid-template-columns:1.2fr 1fr;gap:32px}.two ul{margin:0;padding-left:20px}
 footer{background:#0a2f1e;color:#bcd2c2;padding:32px 0;font-size:15px}footer a{color:#fec418}
-.foot{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}.foot img{height:44px}
+.foot{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+@media(max-width:900px){.ctg{grid-template-columns:1fr}}
 @media(max-width:760px){.hero-in,.two{grid-template-columns:1fr}.hero-in{padding-top:36px}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="#fff" stroke="none"/></symbol>
+<symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+</defs></svg>
 <header class="bar"><div class="wrap bar-in">
- <a class="brand" href="#inicio"><img src="logo.png" alt="Logo del proyecto"><span><b>Agricultura sostenible y resiliente</b><small>al cambio climático · Piura, Perú</small></span></a>
- <nav aria-label="Secciones"><a href="#hoy">Clima de hoy</a><a href="#registro">Registro y gráficas</a><a href="#novedades">Novedades</a><a href="#proyecto">Proyecto</a></nav>
+ <a class="brand" href="#inicio"><img src="logo.png" alt="Logo del proyecto"><span><b>Agricultura sostenible y resiliente al cambio climático</b><small>Piura, Perú</small></span></a>
+ <button class="menu-btn" id="mb" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><i><b></b><b></b><b></b></i><span>Menú</span></button>
+ <nav id="menu" aria-label="Secciones"><a href="#hoy">Clima de hoy</a><a href="#registro">Gráficas</a><a href="#novedades">Novedades</a><a href="#proyecto">Proyecto</a><a href="#contacto">Contacto</a></nav>
 </div></header>
 
 <section class="hero" id="inicio"><div class="wrap hero-in">
@@ -92,13 +114,19 @@ footer{background:#0a2f1e;color:#bcd2c2;padding:32px 0;font-size:15px}footer a{c
 
 <section class="s" id="proyecto"><div class="wrap"><h2>Sobre el proyecto</h2>
 <div class="two">
- <div><p>«Agricultura sostenible y resiliente al cambio climático» es un proyecto de Piura, Perú. Esta página reúne los datos de su estación meteorológica: el clima de hoy, el registro histórico y gráficas para analizar periodos concretos.</p>
- <p>Escríbenos a <a href="mailto:agrososteniblepiura@gmail.com">agrososteniblepiura@gmail.com</a>.</p></div>
- <div><h3 style="font-size:18px;margin-bottom:8px">Qué mide la estación</h3><ul><li>Temperatura, humedad y presión</li><li>Viento: promedio y ráfagas</li><li>Radiación solar y lluvia</li><li>Temperatura y humedad del suelo</li><li>Humedad de la hoja</li></ul></div>
+ <div><p>«Agricultura sostenible y resiliente al cambio climático» es un proyecto de Piura, Perú. Esta página reúne los datos de su estación meteorológica: el clima de hoy, el registro histórico y gráficas para analizar periodos concretos.</p></div>
+ <div><h3 style="font-size:18px;margin-bottom:8px">Qué mide la estación</h3><ul><li>Temperatura del aire: media, mínima y máxima del día</li><li>Humedad relativa: media, mínima y máxima del día</li><li>Punto de rocío y presión atmosférica</li><li>Viento: velocidad media, mínima y ráfaga máxima; dirección y su constancia</li><li>Radiación solar</li><li>Precipitación: por intervalo y total diario</li><li>Suelo: temperatura y humedad</li><li>Humedad de la hoja</li><li>Equipo: tipo de alimentación y voltaje de la batería</li></ul></div>
 </div></div></section>
 
-<footer><div class="wrap foot"><span>© Agricultura sostenible y resiliente al cambio climático · Piura, Perú<br>Datos de la estación vía DPS-Promatic.</span>
-<span><a href="https://www.instagram.com/agrososteniblepiura/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/share/1CCjnh2Cut/" target="_blank" rel="noopener">Facebook</a> · <a href="mailto:agrososteniblepiura@gmail.com">Correo</a></span></div></footer>
+<section class="s" id="contacto"><div class="wrap"><h2>Contacto</h2><p class="sub">Escríbenos o síguenos para conocer las novedades del proyecto.</p>
+<div class="ctg">
+ <a class="ct" href="mailto:agrososteniblepiura@gmail.com"><span class="ic mail"><svg><use href="#i-mail"/></svg></span><span><b>Correo</b><small>agrososteniblepiura@gmail.com</small></span></a>
+ <a class="ct" href="https://www.instagram.com/agrososteniblepiura/" target="_blank" rel="noopener"><span class="ic ig"><svg><use href="#i-ig"/></svg></span><span><b>Instagram</b><small>@agrososteniblepiura</small></span></a>
+ <a class="ct" href="https://www.facebook.com/profile.php?id=61556795847342" target="_blank" rel="noopener"><span class="ic fb"><svg><use href="#i-fb"/></svg></span><span><b>Facebook</b><small>Página del proyecto</small></span></a>
+</div></div></section>
+
+<footer><div class="wrap foot"><div class="fl"><img src="logo.png" alt="Logo del proyecto"><span>© Agricultura sostenible y resiliente al cambio climático · Piura, Perú<br>Datos de la estación vía DPS-Promatic.</span></div>
+<div class="fi"><a class="ic ig" href="https://www.instagram.com/agrososteniblepiura/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a><a class="ic fb" href="https://www.facebook.com/profile.php?id=61556795847342" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a><a class="ic mail" href="mailto:agrososteniblepiura@gmail.com" aria-label="Correo"><svg><use href="#i-mail"/></svg></a></div></div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
@@ -131,9 +159,20 @@ function draw(){var p=P[sel.value],css=getComputedStyle(document.documentElement
  $("stats").innerHTML=v.length?"<span>Máxima <b>"+n(Math.max.apply(0,v))+"</b></span><span>Mínima <b>"+n(Math.min.apply(0,v))+"</b></span><span>Promedio <b>"+n(v.reduce(function(a,b){return a+b},0)/v.length)+"</b></span>":"";
  if(chart)chart.destroy();
  try{chart=new Chart($("ch"),{type:"line",data:{labels:lab,datasets:[{label:p[0]+u,data:dat,borderColor:p[2],backgroundColor:p[2]+"22",fill:true,tension:.3,spanGaps:false,pointRadius:D.length>120?0:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:tick}}},scales:{x:{ticks:{color:tick,maxTicksLimit:10},grid:{color:grid}},y:{ticks:{color:tick},grid:{color:grid}}}}})}catch(e){}}
-function social(el,nombre,url){el.innerHTML='<div class="fb-card"><p>Mira nuestras publicaciones más recientes en '+nombre+'.</p><a class="btn" href="'+url+'" target="_blank" rel="noopener">Ver en '+nombre+'</a></div>'}
-if(FB_PAGE_URL)$("fb").innerHTML='<iframe title="Publicaciones de Facebook" src="https://www.facebook.com/plugins/page.php?href='+encodeURIComponent(FB_PAGE_URL)+'&tabs=timeline&width=500&height=560&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false" width="100%" height="560" style="border:0" loading="lazy"></iframe>';else social($("fb"),"Facebook","https://www.facebook.com/share/1CCjnh2Cut/");
-if(!$("ig").children.length)social($("ig"),"Instagram","https://www.instagram.com/agrososteniblepiura/");
+function social(el,nombre,url,ic,handle){el.innerHTML='<div class="fb-card"><span class="ic '+ic+'"><svg><use href="#i-'+ic+'"/></svg></span><b>'+handle+'</b><p>Mira nuestras publicaciones más recientes.</p><a class="btn" href="'+url+'" target="_blank" rel="noopener">Ver en '+nombre+'</a></div>'}
+var FBL="https://www.facebook.com/profile.php?id=61556795847342";
+function fb(){var el=$("fb"),w=Math.max(180,Math.min(500,el.clientWidth||320));
+ if(el.dataset.w&&Math.abs(el.dataset.w-w)<30)return;el.dataset.w=w;
+ el.innerHTML='<div class="fbw"><iframe title="Publicaciones de Facebook" src="https://www.facebook.com/plugins/page.php?href='+encodeURIComponent(FB_PAGE_URL)+'&tabs=timeline&width='+w+'&height=560&small_header=true&hide_cover=true&show_facepile=false" width="'+w+'" height="560" style="border:0;overflow:hidden;color-scheme:light" loading="lazy"></iframe></div>'}
+var rt;if(FB_PAGE_URL){fb();addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(fb,300)})}else social($("fb"),"Facebook",FBL,"fb","Facebook");
+if(!$("ig").children.length)social($("ig"),"Instagram","https://www.instagram.com/agrososteniblepiura/","ig","@agrososteniblepiura");
+var mb=$("mb"),mn=$("menu");
+function cm(o){mn.classList.toggle("open",o);mb.setAttribute("aria-expanded",o);mb.setAttribute("aria-label",o?"Cerrar menú":"Abrir menú")}
+mb.addEventListener("click",function(e){e.stopPropagation();cm(!mn.classList.contains("open"))});
+mn.addEventListener("click",function(e){if(e.target.tagName=="A")cm(false)});
+document.addEventListener("click",function(e){if(!mn.contains(e.target))cm(false)});
+addEventListener("keydown",function(e){if(e.key=="Escape")cm(false)});
+if(window.IntersectionObserver){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)document.querySelectorAll("nav a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")=="#"+e.target.id)})})},{rootMargin:"-45% 0px -50% 0px"});document.querySelectorAll("section[id]").forEach(function(x){io.observe(x)})}
 sel.addEventListener("change",draw);
 per.addEventListener("change",function(){$("rg").hidden=per.value!="r";load()});
 $("d1").addEventListener("change",load);$("d2").addEventListener("change",load);
