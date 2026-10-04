@@ -7,15 +7,16 @@ BASE = "https://www.dps-promatic.com/webapps/gprsmeteo"
 STATION = os.getenv("STATION", "PERU")
 COLS = ["smsc","si","was","press","wmins","wgust","dwgust","leaf","wdir","wdsd","sun","temp","dmintemp",
         "dmaxtemp","soilt","rf","drf","soilw","dp","rh","dminrh","dmaxrh","pwr","vbatt"]
-PANTALLA = ["ts","temp","rh","press","wgust","dp","was","sun","soilt","soilw","rf","drf","leaf","vbatt","pwr"]
+PANTALLA = ["ts"] + COLS   # todos los parámetros que envía la estación
 DIAS = 35   # días que la página puede mostrar en pantalla (el historial completo queda en lecturas.csv)
 
-def descargar():
+def descargar(extra=None):
     """AWX funciona en dos pasos: el POST guarda la selección y señala getcsv.php, que entrega el CSV."""
     s = requests.Session(); s.headers["User-Agent"] = "EstacionMeteoProyecto/1.0"
     s.get(BASE + "/demo_login.php", timeout=30)                     # acceso de invitado
-    r = s.post(BASE + "/graphic.php", timeout=60,
-               data={"AWS0": STATION, "datetype": 3, "action": "csv", "view": "0"})   # últimos 7 días
+    datos = {"AWS0": STATION, "datetype": 3, "action": "csv", "view": "0"}   # por defecto: últimos 7 días
+    if extra: datos.update(extra)
+    r = s.post(BASE + "/graphic.php", timeout=60, data=datos)
     r.raise_for_status()
     m = re.search(r"window\.open\('(getcsv\.php[^']*)'", r.text)
     if not m: raise SystemExit("AWX no indicó la dirección de descarga (getcsv.php)")
@@ -45,17 +46,25 @@ def main():
     for r in leer_awx(descargar()):
         if r["ts"] not in filas:
             nuevas += 1; filas[r["ts"]] = r
-    if not nuevas:
+    try:   # si la página pide columnas nuevas, se reescribe aunque no haya lecturas nuevas
+        al_dia = json.load(open("data/reciente.json", encoding="utf-8"))["cols"] == PANTALLA
+    except Exception:
+        al_dia = False
+    if not nuevas and al_dia:
         print("Sin lecturas nuevas"); return
+    guardar(filas)
+    print(nuevas, "lecturas nuevas; total", len(filas))
+
+def guardar(filas):
+    """Escribe el historial completo (lecturas.csv) y la ventana reciente que lee la página (reciente.json)."""
     orden = sorted(filas)
-    with open(ruta, "w", encoding="utf-8", newline="") as f:
+    with open("data/lecturas.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, ["ts"] + COLS); w.writeheader()
         for k in orden: w.writerow(filas[k])
     corte = (dt.datetime.fromisoformat(orden[-1]) - dt.timedelta(days=DIAS)).isoformat(timespec="minutes")
     rows = [[k] + [numero(filas[k][c]) for c in PANTALLA[1:]] for k in orden if k >= corte]
     with open("data/reciente.json", "w", encoding="utf-8") as f:
         json.dump({"cols": PANTALLA, "rows": rows}, f, separators=(",", ":"))
-    print(nuevas, "lecturas nuevas; total", len(orden))
 
 if __name__ == "__main__":
     main()

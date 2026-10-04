@@ -17,18 +17,16 @@ body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.6 "Source S
 h1,h2,h3,.big{font-family:"Bricolage Grotesque",Georgia,sans-serif;line-height:1.15;margin:0;color:var(--ink)}
 a{color:var(--leaf)}.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 .bar{position:sticky;top:0;z-index:5;background:var(--panel);border-bottom:1px solid var(--line)}
-.bar-in{display:flex;align-items:center;justify-content:space-between;gap:8px 20px;padding-top:8px;padding-bottom:8px;min-height:68px;flex-wrap:wrap}
+.bar-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px;min-height:72px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);flex:1 1 0;min-width:0}
 .brand img{height:44px;width:auto;background:#fff;border-radius:10px;padding:4px 6px;flex:none}.brand b{display:block;font:700 16px/1.25 "Bricolage Grotesque",sans-serif;text-wrap:balance;max-width:36ch}.brand small{color:var(--mute);font-size:14px}
-nav{display:flex;gap:22px}nav a{text-decoration:none;color:var(--mute);font-weight:600;white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
-nav a:hover{color:var(--leaf)}nav a.on{color:var(--leaf);border-bottom-color:var(--sun)}
-.menu-btn{display:none;align-items:center;gap:10px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 14px;font:600 16px "Source Sans 3",sans-serif;cursor:pointer}
+.menu-btn{display:inline-flex;align-items:center;gap:10px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px 16px;font:600 16px "Source Sans 3",sans-serif;cursor:pointer}
 .menu-btn i{display:grid;gap:4px}.menu-btn i b{display:block;width:20px;height:2px;background:currentColor;border-radius:2px;transition:transform .2s,opacity .2s}
 .menu-btn[aria-expanded=true] i b:nth-child(1){transform:translateY(6px) rotate(45deg)}.menu-btn[aria-expanded=true] i b:nth-child(2){opacity:0}.menu-btn[aria-expanded=true] i b:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-@media(max-width:480px){.brand b{font-size:14.5px}.brand img{height:40px}.menu-btn{padding:11px 12px}.menu-btn span{display:none}}
-@media(max-width:900px){.menu-btn{display:inline-flex}
- nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--panel);border-bottom:1px solid var(--line);box-shadow:0 14px 24px rgba(0,0,0,.18);padding:6px 20px 12px}
- nav.open{display:flex}nav a{font-size:18px;padding:14px 4px;border-bottom:1px solid var(--line)}nav a:last-child{border-bottom:0}}
+nav{display:none;position:absolute;right:20px;top:calc(100% + 6px);width:300px;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.25);padding:8px;z-index:6}
+nav.open{display:flex}nav a{padding:12px 14px;border-radius:10px;text-decoration:none;color:var(--text);font-weight:600;font-size:17px}
+nav a:hover{background:var(--bg)}nav a.on{background:var(--bg);color:var(--leaf);box-shadow:inset 3px 0 var(--sun)}
+@media(max-width:600px){.brand b{font-size:14.5px}.brand img{height:40px}.menu-btn{padding:11px 12px}.menu-btn span{display:none}nav{left:0;right:0;width:auto;top:100%;border-radius:0 0 14px 14px;border-width:0 0 1px}}
 a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 .hero{background:#0a2f1e repeating-conic-gradient(from 0deg at 88% 125%,rgba(254,196,24,.13) 0 5deg,transparent 5deg 15deg);color:#e9f3ea}
 .hero-in{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:end;padding:56px 20px 48px}
@@ -60,79 +58,122 @@ th,td{text-align:right;padding:9px 12px;border-bottom:1px solid var(--line)}th:f
 .fbw{background:#fff;border-radius:10px;overflow:hidden;display:flex;justify-content:center;max-width:100%}
 .ic{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:12px;color:#fff;flex:none}
 .ic svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.ic.fb{background:#1877f2}.ic.ig{background:linear-gradient(45deg,#f9a63a,#e1306c,#7a3bd1)}.ic.mail{background:#d93025}
-.ctg{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);gap:16px}
-.ct{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink);min-width:0}
-.ct:hover{border-color:var(--leaf)}.ct b{display:block;font:700 17px "Bricolage Grotesque",sans-serif}.ct small{color:var(--mute);font-size:15px;overflow-wrap:anywhere}
-.fl{display:flex;align-items:center;gap:14px}.fl img{height:46px;background:#fff;border-radius:10px;padding:4px 6px}.fi{display:flex;gap:10px}
+.ic.fb{background:#1877f2}.ic.mail{background:#d93025}
 .two{display:grid;grid-template-columns:1.2fr 1fr;gap:32px}.two ul{margin:0;padding-left:20px}
-footer{background:#0a2f1e;color:#bcd2c2;padding:32px 0;font-size:15px}footer a{color:#fec418}
-.foot{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
-@media(max-width:900px){.ctg{grid-template-columns:1fr}}
+
 @media(max-width:760px){.hero-in,.two{grid-template-columns:1fr}.hero-in{padding-top:36px}}
+.view{display:none}.view.on{display:block}
+.btn.sun{background:#fec418;color:#0a2f1e;border-color:#fec418;margin-top:18px}
+.strip{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:-34px auto 48px}
+.kt{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:0 10px 24px rgba(0,0,0,.10)}
+.kt span{color:var(--mute);font-size:14px}.kt b{display:block;font:700 24px "Bricolage Grotesque",sans-serif;color:var(--ink)}
+.now p#mm{color:#fec418;font-weight:600;font-size:16px;margin:2px 0 8px}.fbcol{max-width:560px}
+td:first-child,th:first-child{position:sticky;left:0;background:var(--panel);z-index:1}th:first-child{background:var(--bg)}
+th{white-space:normal;min-width:92px;font-size:13px;line-height:1.25;vertical-align:bottom}th small{display:block;font-weight:400}
+footer{background:#0a2f1e;color:#bcd2c2;padding:40px 0 22px;font-size:15px}
+.fgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}
+.fl{display:flex;align-items:center;gap:14px}.fl img{height:56px;background:#fff;border-radius:12px;padding:5px 8px}
+.fl b{display:block;color:#fff;font:700 18px/1.25 "Bricolage Grotesque",sans-serif;max-width:30ch}.fl span{color:#bcd2c2}
+.fc h3{color:#fff;font-size:17px;margin-bottom:10px}
+.ct2{display:flex;align-items:center;gap:12px;color:#e9f3ea;text-decoration:none;padding:6px 0;overflow-wrap:anywhere}.ct2:hover{color:#fec418}
+.copy{border-top:1px solid #1f4a35;margin:26px 0 0;padding-top:16px;font-size:14px}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr}}
+.gcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.pc{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;overflow:hidden}
+.pc::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--cc)}
+.pc h3{display:flex;align-items:center;gap:10px;font-size:18px;margin-bottom:14px}
+.gi{width:34px;height:34px;border-radius:10px;background:var(--cc);color:#fff;display:grid;place-items:center;flex:none}
+.gi svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hl{color:var(--mute);font-size:14px}.hv{font:700 44px/1.05 "Bricolage Grotesque",sans-serif;color:var(--ink)}.hv small{font-size:18px;color:var(--mute);font-weight:500;margin-left:4px}
+.row2{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:9px 0;border-top:1px solid var(--line)}.row2:first-of-type{border-top:0}
+.row2 span{color:var(--mute);font-size:15px}.row2 b{white-space:nowrap;font:700 19px "Bricolage Grotesque",sans-serif;color:var(--ink);text-align:right}
+.sh{display:block;font-style:normal;color:var(--mute);font-size:13px;font-weight:400}.cl{font-style:normal;font-size:12px;border:1px solid var(--line);border-radius:99px;padding:0 7px;margin-left:6px;color:var(--mute)}
+.rb,.gb{height:10px;border-radius:99px;background:var(--line);position:relative;margin:12px 0 6px}
+.rb i{position:absolute;top:-5px;width:6px;height:20px;border-radius:3px;background:var(--ink);transform:translateX(-50%);box-shadow:0 0 0 2px var(--panel)}
+.gb i{display:block;height:100%;border-radius:99px;background:var(--cc)}
+.re,.ge{display:flex;justify-content:space-between;gap:10px;color:var(--mute);font-size:13px}.re b{display:block;color:var(--ink);font:700 17px "Bricolage Grotesque",sans-serif}.re span:last-child{text-align:right}
+.chip{display:inline-block;border-radius:99px;padding:2px 12px;font-weight:600;font-size:14px;background:var(--bg);border:1px solid var(--line);color:var(--ink)}.chip.warn{background:#fff3cd;color:#6b4a00;border-color:#fec418}
+.cmp{display:flex;align-items:center;gap:16px;margin-bottom:8px}.cmp svg{width:112px;height:112px;flex:none}
+.today{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:14px}@media(max-width:640px){.today{grid-template-columns:1fr}}
+.ic.ig{background:linear-gradient(45deg,#f9a63a,#e1306c,#7a3bd1)}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
-<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="#fff" stroke="none"/></symbol>
 <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="#fff" stroke="none"/></symbol>
 </defs></svg>
 <header class="bar"><div class="wrap bar-in">
  <a class="brand" href="#inicio"><img src="logo.png" alt="Logo del proyecto"><span><b>Agricultura sostenible y resiliente al cambio climático</b><small>Piura, Perú</small></span></a>
  <button class="menu-btn" id="mb" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><i><b></b><b></b><b></b></i><span>Menú</span></button>
- <nav id="menu" aria-label="Secciones"><a href="#hoy">Clima de hoy</a><a href="#registro">Gráficas</a><a href="#novedades">Novedades</a><a href="#proyecto">Proyecto</a><a href="#contacto">Contacto</a></nav>
+ <nav id="menu" aria-label="Menú principal"><a href="#inicio" data-v="inicio">Inicio</a><a href="#resumen" data-v="resumen">Resumen del día</a><a href="#parametros" data-v="parametros">Parámetros y gráficas</a><a href="#novedades" data-v="novedades">Novedades</a><a href="#proyecto" data-v="proyecto">Sobre el proyecto</a></nav>
 </div></header>
 
-<section class="hero" id="inicio"><div class="wrap hero-in">
+<div class="view" id="inicio"><section class="hero"><div class="wrap hero-in">
  <div><p class="eyebrow">Estación meteorológica · Piura, Perú</p>
  <h1>El clima de la estación, al día</h1>
  <p class="lead">Datos reales medidos por la estación del proyecto: lo que pasa hoy y cómo ha cambiado en los últimos días.</p>
- <p class="pill" id="estado">Cargando datos…</p></div>
- <div class="now" aria-live="polite"><span>Temperatura ahora</span><div class="big" id="bigT">–<small>°C</small></div><p>La estación envía una lectura cada 30 minutos</p></div>
+ <p class="pill" id="estado">Cargando datos…</p><p><a class="btn sun" href="#resumen">Ver resumen del día</a></p></div>
+ <div class="now" aria-live="polite"><span>Temperatura ahora</span><div class="big" id="bigT">–<small>°C</small></div><p id="mm"></p><p>La estación envía una lectura cada 30 minutos</p></div>
 </div></section>
+<div class="wrap" style="margin:44px auto 56px"><h2>Última lectura</h2><p class="sub" id="lr"></p><div class="gcards" id="cards"></div></div></div>
 
-<section class="s" id="hoy"><div class="wrap"><h2>Clima de hoy</h2><p class="sub">Última lectura de la estación.</p><div class="groups" id="cards"></div></div></section>
+<section class="s view" id="resumen"><div class="wrap"><h2>Resumen del día</h2><p class="sub" id="tnote"></p><div class="today" id="today"></div></div></section>
 
-<section class="s" id="registro"><div class="wrap"><h2>Registro y gráficas</h2><p class="sub">Elige el parámetro y el periodo que quieres analizar.</p>
+<section class="s view" id="parametros"><div class="wrap"><h2>Parámetros y gráficas</h2><p class="sub">Elige el parámetro y el periodo que quieres ver.</p>
 <div class="tools">
- <label>Parámetro<select id="par"></select></label>
- <label>Periodo<select id="per"><option value="1">Hoy</option><option value="7" selected>Últimos 7 días</option><option value="30">Últimos 30 días</option><option value="r">Rango de fechas</option></select></label>
- <span id="rg" hidden style="display:flex;gap:12px"><label>Desde<input type="date" id="d1"></label><label>Hasta<input type="date" id="d2"></label></span>
+ <label>Tipo de gráfica<select id="kind"><option value="line">Evolución en el tiempo</option><option value="daily">Resumen diario de temperatura</option><option value="dual">Temperatura y humedad</option><option value="rose">Rosa de los vientos</option><option value="rain">Lluvia por día</option></select></label>
+ <label id="pw">Parámetro<select id="par"></select></label>
+ <label>Periodo<select id="per"><option value="1" selected>Hoy</option><option value="7">Últimos 7 días</option></select></label>
 </div>
-<div class="stats" id="stats"></div>
+<div class="stats" id="stats"></div><p class="sub" id="hint" style="margin:0 0 12px"></p>
 <div class="chart"><canvas id="ch" aria-label="Gráfica del parámetro elegido"></canvas></div>
-<div class="scroll"><table><thead><tr><th>Fecha y hora</th><th>Temp °C</th><th>Humedad %</th><th>Presión hPa</th><th>Ráfaga km/h</th><th>Rocío °C</th><th>Viento km/h</th><th>Radiación W/m²</th></tr></thead><tbody id="tb"></tbody></table></div>
+<h3 style="font-size:22px;margin:28px 0 0">Registro de lecturas</h3>
+<div class="scroll" style="margin-top:12px"><table><thead id="th"></thead><tbody id="tb"></tbody></table></div>
 <p class="sub" style="margin-top:14px"><a href="data/lecturas.csv" download>Descargar el historial completo (CSV)</a></p>
 </div></section>
 
-<section class="s" id="novedades"><div class="wrap"><h2>Novedades</h2><p class="sub">Lo último que publicamos en nuestras redes.</p>
-<div class="social">
- <article class="card"><h3>Facebook</h3><div id="fb"></div></article>
- <article class="card"><h3>Instagram</h3><div id="ig"><!-- Aquí va el código del widget de Instagram --></div></article>
-</div></div></section>
+<section class="s view" id="novedades"><div class="wrap"><h2>Novedades</h2><p class="sub">Lo último que publicamos en Facebook. También estamos en Instagram.</p>
+<div class="fbcol"><article class="card"><div id="fb"></div></article><p style="margin-top:14px"><a class="btn" href="https://www.facebook.com/profile.php?id=61556795847342" target="_blank" rel="noopener">Abrir en Facebook</a> <a class="btn" href="https://www.instagram.com/agrososteniblepiura/" target="_blank" rel="noopener">Ver Instagram</a></p></div></div></section>
 
-<section class="s" id="proyecto"><div class="wrap"><h2>Sobre el proyecto</h2>
+<section class="s view" id="proyecto"><div class="wrap"><h2>Sobre el proyecto</h2>
 <div class="two">
  <div><p>«Agricultura sostenible y resiliente al cambio climático» es un proyecto de Piura, Perú. Esta página reúne los datos de su estación meteorológica: el clima de hoy, el registro histórico y gráficas para analizar periodos concretos.</p></div>
- <div><h3 style="font-size:18px;margin-bottom:8px">Qué mide la estación</h3><ul><li>Temperatura del aire: media, mínima y máxima del día</li><li>Humedad relativa: media, mínima y máxima del día</li><li>Punto de rocío y presión atmosférica</li><li>Viento: velocidad media, mínima y ráfaga máxima; dirección y su constancia</li><li>Radiación solar</li><li>Precipitación: por intervalo y total diario</li><li>Suelo: temperatura y humedad</li><li>Humedad de la hoja</li><li>Equipo: tipo de alimentación y voltaje de la batería</li></ul></div>
+ <div><h3 style="font-size:18px;margin-bottom:8px">Qué mide la estación</h3><ul><li>Temperatura del aire: media, mínima y máxima del día</li><li>Humedad relativa: media, mínima y máxima del día</li><li>Punto de rocío y presión atmosférica</li><li>Viento: velocidad media, mínima y ráfaga máxima; dirección y su constancia</li><li>Radiación solar</li><li>Precipitación: por intervalo y total diario</li><li>Suelo: temperatura y humedad</li><li>Humedad de la hoja</li><li>Equipo: voltaje de la batería</li></ul></div>
 </div></div></section>
 
-<section class="s" id="contacto"><div class="wrap"><h2>Contacto</h2><p class="sub">Escríbenos o síguenos para conocer las novedades del proyecto.</p>
-<div class="ctg">
- <a class="ct" href="mailto:agrososteniblepiura@gmail.com"><span class="ic mail"><svg><use href="#i-mail"/></svg></span><span><b>Correo</b><small>agrososteniblepiura@gmail.com</small></span></a>
- <a class="ct" href="https://www.instagram.com/agrososteniblepiura/" target="_blank" rel="noopener"><span class="ic ig"><svg><use href="#i-ig"/></svg></span><span><b>Instagram</b><small>@agrososteniblepiura</small></span></a>
- <a class="ct" href="https://www.facebook.com/profile.php?id=61556795847342" target="_blank" rel="noopener"><span class="ic fb"><svg><use href="#i-fb"/></svg></span><span><b>Facebook</b><small>Página del proyecto</small></span></a>
-</div></div></section>
 
-<footer><div class="wrap foot"><div class="fl"><img src="logo.png" alt="Logo del proyecto"><span>© Agricultura sostenible y resiliente al cambio climático · Piura, Perú<br>Datos de la estación vía DPS-Promatic.</span></div>
-<div class="fi"><a class="ic ig" href="https://www.instagram.com/agrososteniblepiura/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a><a class="ic fb" href="https://www.facebook.com/profile.php?id=61556795847342" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a><a class="ic mail" href="mailto:agrososteniblepiura@gmail.com" aria-label="Correo"><svg><use href="#i-mail"/></svg></a></div></div></footer>
+
+<footer id="contacto"><div class="wrap">
+ <div class="fgrid">
+  <div class="fl"><img src="logo.png" alt="Logo del proyecto"><div><b>Agricultura sostenible y resiliente al cambio climático</b><span>Piura, Perú</span></div></div>
+  <div class="fc"><h3>Contacto</h3>
+   <a class="ct2" href="mailto:agrososteniblepiura@gmail.com"><span class="ic mail"><svg><use href="#i-mail"/></svg></span>agrososteniblepiura@gmail.com</a>
+   <a class="ct2" href="https://www.facebook.com/profile.php?id=61556795847342" target="_blank" rel="noopener"><span class="ic fb"><svg><use href="#i-fb"/></svg></span>Síguenos en Facebook</a>
+   <a class="ct2" href="https://www.instagram.com/agrososteniblepiura/" target="_blank" rel="noopener"><span class="ic ig"><svg><use href="#i-ig"/></svg></span>@agrososteniblepiura</a></div>
+ </div>
+ <p class="copy">© Agricultura sostenible y resiliente al cambio climático · Datos de la estación vía DPS-Promatic.</p>
+</div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
 var FB_PAGE_URL="https://www.facebook.com/profile.php?id=61556795847342";  // dirección real de la página de Facebook (ej. https://www.facebook.com/NombrePagina)
-var P=[["Temperatura","temp","#c98a00","°C"],["Humedad relativa","rh","#2a6fa8","%"],["Presión atmosférica","press","#1b7a45","hPa"],["Viento promedio","was","#1b7a45","km/h"],["Ráfaga de viento","wgust","#1b7a45","km/h"],["Radiación solar","sun","#c98a00","W/m²"],["Punto de rocío","dp","#2a6fa8","°C"],["Temperatura del suelo","soilt","#c98a00","°C"],["Humedad del suelo (0 mojado, 200 seco)","soilw","#2a6fa8","cb"],["Lluvia del intervalo","rf","#2a6fa8",""],["Hoja mojada (0 mojada, 15 seca)","leaf","#1b7a45",""]];
-var $=function(i){return document.getElementById(i)},D=[],chart,sel=$("par"),per=$("per");
+var C=["#c98a00","#2a6fa8","#1b7a45","#d97706","#7c5a3a","#52695c"],CP=["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSO","SO","OSO","O","ONO","NO","NNO"];
+// [grupo, [[etiqueta, clave, unidad, nota]]]: todos los parámetros que envía la estación
+var G=[["Temperatura",[["Temperatura","temp","°C"],["Mínima del día","dmintemp","°C"],["Máxima del día","dmaxtemp","°C"]]],
+["Humedad y presión",[["Humedad relativa","rh","%"],["Humedad mínima del día","dminrh","%"],["Humedad máxima del día","dmaxrh","%"],["Punto de rocío","dp","°C"],["Presión atmosférica","press","hPa"]]],
+["Viento",[["Velocidad media","was","km/h"],["Velocidad mínima","wmins","km/h"],["Ráfaga máxima","wgust","km/h"],["Ráfaga máxima del día","dwgust","km/h"],["Dirección","wdir","°"],["Constancia de la dirección","wdsd","","0 variable · 14 constante"]]],
+["Sol y lluvia",[["Radiación solar","sun","W/m²"],["Lluvia del intervalo","rf",""],["Lluvia del día","drf",""]]],
+["Suelo y hoja",[["Temperatura del suelo","soilt","°C"],["Humedad del suelo","soilw","cb","0 muy mojado · 200 muy seco"],["Humedad de la hoja","leaf","","0 mojada · 15 seca"]]],
+["Equipo",[["Voltaje de la batería","vbatt","V"]]]],P=[],TK=[];
+G.forEach(function(g,i){g[1].forEach(function(x){TK.push(x);if(["pwr","si","smsc"].indexOf(x[1])<0)P.push([x[0],x[1],C[i],x[2]])})});
+var D1={temp:1,dmintemp:1,dmaxtemp:1,soilt:1,soilw:1,dp:1,rh:1,dminrh:1,dmaxrh:1,rf:1,drf:1};
+function fmt(k,v){return v==null||v===""?"–":(typeof v=="number"&&D1[k]?v.toFixed(1):v)}
+function fv(k,v,u){if(v==null||v==="")return "–";if(typeof v=="number"&&D1[k])v=v.toFixed(1);if(k=="pwr")return v=="E"?"Panel solar":v=="B"?"Batería":v;if(k=="wdir")return v+"° "+CP[Math.round(v/22.5)%16];return v+(u?" "+u:"")}
+var H={soilw:"0 = suelo muy mojado · 200 = muy seco (centibares).",leaf:"0 = hoja mojada · 15 = hoja seca.",sun:"Energía del sol que llega a la superficie (0 de noche).",wgust:"Velocidad máxima del viento en el intervalo.",dp:"Temperatura a la que el aire se satura y se forma rocío."};
+var $=function(i){return document.getElementById(i)},D=[],chart,sel=$("par"),per=$("per"),kind;
+kind=$("kind");
 sel.innerHTML=P.map(function(p,i){return "<option value="+i+">"+p[0]+"</option>"}).join("");
 function iso(d){return d.toISOString().slice(0,10)}
 var P0,T0=0;
@@ -140,44 +181,95 @@ function datos(){if(!P0||Date.now()-T0>6e4){T0=Date.now();P0=fetch("data/recient
 function f(v,u){return v==null?"–":v+(u?" "+u:"")}
 function dm(t){return t.slice(8,10)+"/"+t.slice(5,7)+" "+t.slice(11)}
 function tile(l,v,h){return '<div class="tile"><span>'+l+'</span><b>'+v+'</b>'+(h?'<small>'+h+'</small>':'')+'</div>'}
-function grp(t,a){return '<div class="grp"><h3>'+t+'</h3>'+a.join('')+'</div>'}
+var IC={t:'<path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>',h:'<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>',w:'<path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>',s:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',g:'<path d="M5 19c0-8 5-14 14-14 0 9-6 14-14 14z"/><path d="M5 19c3-5 6-8 11-10"/>',e:'<rect x="1" y="6" width="18" height="12" rx="2"/><path d="M23 13v-2"/>'},CL=' <em class="cl">calculado</em>';
+function pc(t,ic,col,body){return '<article class="pc" style="--cc:'+col+'"><h3><span class="gi"><svg viewBox="0 0 24 24">'+IC[ic]+'</svg></span>'+t+'</h3>'+body+'</article>'}
+function row(l,v,h){return '<div class="row2"><span>'+l+(h?'<em class="sh">'+h+'</em>':'')+'</span><b>'+v+'</b></div>'}
+function big(l,v,u){return '<div class="hl">'+l+'</div><div class="hv">'+v+(u?'<small>'+u+'</small>':'')+'</div>'}
+function rng(lo,hi,v,u,a,b,g,k1,k2,k){var p=(lo!=null&&hi!=null&&hi>lo&&v!=null)?Math.min(100,Math.max(0,(v-lo)/(hi-lo)*100)):50;return '<div class="rb" style="background:'+g+'"><i style="left:'+p+'%"></i></div><div class="re"><span>'+a+'<b>'+fmt(k1,lo)+' '+u+'</b></span><span>'+b+'<b>'+fmt(k2,hi)+' '+u+'</b></span></div>'}
+function gau(v,max,l,r){return '<div class="gb"><i style="width:'+(v==null?0:Math.min(100,v/max*100))+'%"></i></div><div class="ge"><span>'+l+'</span><span>'+r+'</span></div>'}
+function compass(d){return '<svg viewBox="0 0 120 120" role="img" aria-label="Dirección del viento"><circle cx="60" cy="60" r="50" fill="none" stroke="var(--line)" stroke-width="3"/><g fill="var(--mute)" font-size="12" font-weight="600" text-anchor="middle"><text x="60" y="19">N</text><text x="105" y="64">E</text><text x="60" y="108">S</text><text x="15" y="64">O</text></g>'+(d==null?'':'<g transform="rotate('+d+' 60 60)"><path d="M60 24 L67 62 L60 56 L53 62 Z" fill="var(--cc)"/></g>')+'<circle cx="60" cy="60" r="4" fill="var(--ink)"/></svg>'}
+function todos(L){return [
+ pc("Temperatura","t",C[0],big("Temperatura",fmt("temp",L.temp),"°C")+rng(L.dmintemp,L.dmaxtemp,L.temp,"°C","Mínima del día","Máxima del día","linear-gradient(90deg,#2a6fa8,#fec418,#d9480f)","dmintemp","dmaxtemp")),
+ pc("Humedad y presión","h",C[1],big("Humedad relativa",fmt("rh",L.rh),"%")+rng(L.dminrh,L.dmaxrh,L.rh,"%","Mínima del día","Máxima del día","linear-gradient(90deg,#cfe3f3,#2a6fa8)","dminrh","dmaxrh")+'<div style="height:10px"></div>'+row("Punto de rocío",fv("dp",L.dp,"°C"))+row("Presión atmosférica",fv("press",L.press,"hPa"))),
+ pc("Viento","w",C[2],'<div class="cmp">'+compass(L.wdir)+'<div>'+big("Velocidad media",fmt("was",L.was),"km/h")+'<p class="sh" style="margin:2px 0 0">Dirección '+fv("wdir",L.wdir)+'</p></div></div>'+row("Velocidad mínima",fv("wmins",L.wmins,"km/h"))+row("Ráfaga máxima",fv("wgust",L.wgust,"km/h"))+row("Ráfaga máxima del día",fv("dwgust",L.dwgust,"km/h"))+row("Constancia de la dirección",fmt("wdsd",L.wdsd))+gau(L.wdsd,14,"0 variable","14 constante")),
+ pc("Sol y lluvia","s",C[3],big("Radiación solar",fmt("sun",L.sun),"W/m²")+'<div style="height:8px"></div>'+row("Lluvia del intervalo",fmt("rf",L.rf))+row("Lluvia del día",fmt("drf",L.drf))),
+ pc("Suelo y hoja","g",C[4],big("Temperatura del suelo",fmt("soilt",L.soilt),"°C")+'<div style="height:8px"></div>'+row("Humedad del suelo",fv("soilw",L.soilw,"cb"))+gau(L.soilw,200,"0 muy mojado","200 muy seco")+row("Humedad de la hoja",fmt("leaf",L.leaf))+gau(L.leaf,15,"0 mojada","15 seca")),
+ pc("Equipo","e",C[5],row("Voltaje de la batería",fv("vbatt",L.vbatt,"V")))].join("")}
+function hoy(A,L){var td=A.filter(function(r){return r.ts.slice(0,10)==L.ts.slice(0,10)}),v=function(k){return td.map(function(r){return r[k]}).filter(function(x){return x!=null})},pm=function(k,u){var a=v(k);return a.length?r1(avg(a))+" "+u:"–"};
+ $("tnote").textContent="Máximas y mínimas: las envía la estación. Los promedios los calcula esta página con las "+td.length+" lecturas de hoy.";
+ $("today").innerHTML=[pc("Temperatura","t",C[0],row("Máxima",fv("dmaxtemp",L.dmaxtemp,"°C"))+row("Mínima",fv("dmintemp",L.dmintemp,"°C"))+row("Promedio",pm("temp","°C"),"calculado")),
+ pc("Humedad","h",C[1],row("Máxima",fv("dmaxrh",L.dmaxrh,"%"))+row("Mínima",fv("dminrh",L.dminrh,"%"))+row("Promedio",pm("rh","%"),"calculado")),
+ pc("Viento","w",C[2],row("Ráfaga máxima del día",fv("dwgust",L.dwgust,"km/h"))+row("Promedio de velocidad",pm("was","km/h"),"calculado")),
+ pc("Sol y lluvia","s",C[3],row("Lluvia del día",fmt("drf",L.drf))+row("Radiación máxima",v("sun").length?Math.max.apply(0,v("sun"))+" W/m²":"–","calculado"))].join("")}
 function latest(){datos().then(function(A){var L=A[A.length-1],m=Math.round((Date.now()-5*36e5-Date.parse(L.ts+":00Z"))/6e4);
- $("bigT").innerHTML=L.temp.toFixed(1)+"<small>°C</small>";
- $("cards").innerHTML=grp("Atmósfera",[tile("Humedad",f(L.rh,"%")),tile("Presión",f(L.press,"hPa")),tile("Punto de rocío",f(L.dp,"°C"))])+grp("Viento y sol",[tile("Viento",f(L.was,"km/h"),"promedio"),tile("Ráfaga",f(L.wgust,"km/h"),"máxima"),tile("Radiación solar",f(L.sun,"W/m²"))])+grp("Suelo y lluvia",[tile("Temp. del suelo",f(L.soilt,"°C")),tile("Humedad del suelo",f(L.soilw,"cb"),"0 muy mojado · 200 muy seco"),tile("Lluvia hoy",f(L.drf))])+grp("Equipo",[tile("Batería",f(L.vbatt,"V"),L.vbatt<12?"Nivel bajo":"Voltaje normal"),tile("Última lectura",dm(L.ts))]);
+ $("bigT").innerHTML=Number(L.temp).toFixed(1)+"<small>°C</small>";
+ $("mm").textContent=L.dmaxtemp==null?"":"Máx. "+fmt("dmaxtemp",L.dmaxtemp)+" °C · Mín. "+fmt("dmintemp",L.dmintemp)+" °C hoy";
+ $("cards").innerHTML=todos(L);$("lr").textContent="Datos de la estación del "+dm(L.ts).replace(" "," a las ")+".";hoy(A,L);
  $("estado").className=m>45?"pill late":"pill";
  $("estado").textContent=(m>45?"Sin lecturas nuevas. ":"")+"Última lectura: "+dm(L.ts)+" (hace "+m+" min)";
 }).catch(function(){$("estado").textContent="Aún no hay datos para mostrar"})}
-function span(){var v=per.value,t=new Date(Date.now()-5*36e5),b=iso(t);
- if(v=="r")return [$("d1").value||b,$("d2").value||b];
- return [iso(new Date(t.getTime()-(v-1)*864e5)),b]}
-function load(){var s=span();datos().then(function(A){D=A.filter(function(r){var d=r.ts.slice(0,10);return d>=s[0]&&d<=s[1]});draw();table()}).catch(function(){})}
-function table(){$("tb").innerHTML=D.slice(-60).reverse().map(function(r){return "<tr><td>"+dm(r.ts)+"</td>"+["temp","rh","press","wgust","dp","was","sun"].map(function(k){return "<td>"+f(r[k])+"</td>"}).join("")+"</tr>"}).join("")}
-function draw(){var p=P[sel.value],css=getComputedStyle(document.documentElement),tick=css.getPropertyValue("--mute").trim(),grid=css.getPropertyValue("--line").trim(),lab=[],dat=[],prev=null,v=[];
- D.forEach(function(r){var t=new Date(r.ts).getTime();if(prev&&t-prev>45*6e4){lab.push("");dat.push(null)}
-  lab.push(per.value=="1"?r.ts.slice(11):dm(r.ts));dat.push(r[p[1]]);prev=t;if(r[p[1]]!=null)v.push(r[p[1]])});
- var u=p[3]?" "+p[3]:"",n=function(x){return Math.round(x*10)/10+u};
- $("stats").innerHTML=v.length?"<span>Máxima <b>"+n(Math.max.apply(0,v))+"</b></span><span>Mínima <b>"+n(Math.min.apply(0,v))+"</b></span><span>Promedio <b>"+n(v.reduce(function(a,b){return a+b},0)/v.length)+"</b></span>":"";
- if(chart)chart.destroy();
- try{chart=new Chart($("ch"),{type:"line",data:{labels:lab,datasets:[{label:p[0]+u,data:dat,borderColor:p[2],backgroundColor:p[2]+"22",fill:true,tension:.3,spanGaps:false,pointRadius:D.length>120?0:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:tick}}},scales:{x:{ticks:{color:tick,maxTicksLimit:10},grid:{color:grid}},y:{ticks:{color:tick},grid:{color:grid}}}}})}catch(e){}}
+var AV=null;
+function span(){var v=+per.value,b=AV?AV[1]:iso(new Date(Date.now()-5*36e5));return [iso(new Date(Date.parse(b)-(v-1)*864e5)),b]}
+function fillPer(A){AV=[A[0].ts.slice(0,10),A[A.length-1].ts.slice(0,10)]}
+function load(){datos().then(function(A){fillPer(A);var s=span();D=A.filter(function(r){var d=r.ts.slice(0,10);return d>=s[0]&&d<=s[1]});if($("parametros").classList.contains("on"))draw();table()}).catch(function(){})}
+function table(){$("th").innerHTML="<tr><th>Fecha y hora</th>"+TK.map(function(x){return "<th>"+x[0]+(x[2]?"<small>"+x[2]+"</small>":"")+"</th>"}).join("")+"</tr>";$("tb").innerHTML=D.slice(-60).reverse().map(function(r){return "<tr><td>"+dm(r.ts)+"</td>"+TK.map(function(x){var v=r[x[1]];return "<td>"+(v==null?"–":v)+"</td>"}).join("")+"</tr>"}).join("")}
+function ax(){var c=getComputedStyle(document.documentElement);return{t:c.getPropertyValue("--mute").trim(),g:c.getPropertyValue("--line").trim()}}
+function chips(a){$("stats").innerHTML=a.map(function(x){return "<span>"+x[0]+" <b>"+x[1]+"</b></span>"}).join("")}
+function avg(a){return a.reduce(function(x,y){return x+y},0)/a.length}
+function r1(x){return Math.round(x*10)/10}
+function make(cfg){try{chart=new Chart($("ch"),cfg)}catch(e){}}
+function opts(c,extra){var o={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:c.t}}},scales:{x:{ticks:{color:c.t,maxTicksLimit:10},grid:{color:c.g}},y:{ticks:{color:c.t},grid:{color:c.g}}}};for(var k in extra){if(k=="scales")for(var s in extra.scales)o.scales[s]=extra.scales[s];else o[k]=extra[k]}return o}
+function series(){var lab=[],prev=null,idx=[];D.forEach(function(r,i){var t=new Date(r.ts).getTime();if(prev&&t-prev>45*6e4){lab.push("");idx.push(null)}lab.push(per.value=="1"?r.ts.slice(11):dm(r.ts));idx.push(i);prev=t});return{lab:lab,idx:idx}}
+function line(key){var q=series();return q.idx.map(function(i){return i==null?null:D[i][key]})}
+function draw(){if(chart)chart.destroy();var k=kind.value;$("pw").hidden=k!="line";$("hint").textContent="";$("stats").innerHTML="";if(!D.length)return;
+ ({line:gLine,daily:gDaily,dual:gDual,rose:gRose,rain:gRain})[k]()}
+function gLine(){var p=P[sel.value],c=ax(),v=D.map(function(r){return r[p[1]]}).filter(function(x){return x!=null}),u=p[3]?" "+p[3]:"",n=function(x){return r1(x)+u};
+ $("hint").textContent=H[p[1]]||"";
+ if(v.length)chips([["Máxima",n(Math.max.apply(0,v))],["Mínima",n(Math.min.apply(0,v))],["Promedio",n(avg(v))]]);
+ make({type:"line",data:{labels:series().lab,datasets:[{label:p[0]+u,data:line(p[1]),borderColor:p[2],backgroundColor:p[2]+"22",fill:true,tension:.3,spanGaps:false,pointRadius:D.length>120?0:3}]},options:opts(c)})}
+function gDaily(){var m={},c=ax();D.forEach(function(r){(m[r.ts.slice(0,10)]=m[r.ts.slice(0,10)]||[]).push(r)});var k=Object.keys(m).sort(),mn=[],mx=[],av=[];
+ k.forEach(function(d){var a=m[d],t=a.map(function(r){return r.temp}).filter(function(x){return x!=null}),lo=a.map(function(r){return r.dmintemp}).filter(function(x){return x!=null}),hi=a.map(function(r){return r.dmaxtemp}).filter(function(x){return x!=null});
+  mn.push(Math.min.apply(0,lo.length?lo:t));mx.push(Math.max.apply(0,hi.length?hi:t));av.push(r1(avg(t)))});
+ $("hint").textContent="Cada barra va de la temperatura mínima a la máxima del día; la línea es el promedio.";
+ chips([["Máxima",r1(Math.max.apply(0,mx))+" °C"],["Mínima",r1(Math.min.apply(0,mn))+" °C"],["Promedio",r1(avg(av))+" °C"]]);
+ make({data:{labels:k.map(function(d){return d.slice(8,10)+"/"+d.slice(5,7)}),datasets:[{type:"bar",label:"Mín–máx (°C)",data:k.map(function(d,i){return [mn[i],mx[i]]}),backgroundColor:"#fec41899",borderColor:"#c98a00",borderWidth:1,borderRadius:6},{type:"line",label:"Promedio (°C)",data:av,borderColor:"#1b7a45",backgroundColor:"#1b7a45",tension:.3,pointRadius:4}]},options:opts(c)})}
+function gDual(){var c=ax();$("hint").textContent="Cuando sube la temperatura, la humedad relativa suele bajar.";
+ make({type:"line",data:{labels:series().lab,datasets:[{label:"Temperatura (°C)",data:line("temp"),borderColor:"#c98a00",tension:.3,pointRadius:0,yAxisID:"y"},{label:"Humedad (%)",data:line("rh"),borderColor:"#2a6fa8",tension:.3,pointRadius:0,yAxisID:"y1"}]},options:opts(c,{scales:{y1:{position:"right",ticks:{color:c.t},grid:{drawOnChartArea:false}}}})})}
+function gRose(){var c=ax(),N=["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSO","SO","OSO","O","ONO","NO","NNO"],cnt=[],sp=[],tot=0,i;
+ if(D[0].wdir===undefined){$("hint").textContent="Esta gráfica estará disponible en unos minutos, cuando se actualicen los datos.";return}
+ for(i=0;i<16;i++){cnt.push(0);sp.push(0)}
+ D.forEach(function(r){if(r.wdir==null)return;var j=Math.round(r.wdir/22.5)%16;cnt[j]++;sp[j]+=r.was||0;tot++});
+ var pct=cnt.map(function(x){return tot?r1(x/tot*100):0}),top=pct.indexOf(Math.max.apply(0,pct));
+ $("hint").textContent="Cada sector indica de dónde sopla el viento y qué porcentaje del tiempo.";chips([["Dirección más frecuente",N[top]+" ("+pct[top]+" %)"]]);
+ make({type:"polarArea",data:{labels:N,datasets:[{data:pct,backgroundColor:"rgba(27,122,69,.55)",borderColor:"#1b7a45",borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(x){var j=x.dataIndex;return pct[j]+" % del tiempo · viento medio "+(cnt[j]?Math.round(sp[j]/cnt[j]):0)+" km/h"}}}},scales:{r:{startAngle:-11.25,ticks:{color:c.t,backdropColor:"transparent",callback:function(v){return v+" %"}},grid:{color:c.g},angleLines:{color:c.g},pointLabels:{display:true,centerPointLabels:true,color:c.t,font:{size:13}}}}}})}
+function gRain(){var m={},c=ax();D.forEach(function(r){var d=r.ts.slice(0,10);m[d]=Math.max(m[d]||0,r.drf||0)});var k=Object.keys(m).sort(),v=k.map(function(d){return m[d]});
+ $("hint").textContent=Math.max.apply(0,v)>0?"Lluvia acumulada en cada día según el sensor de la estación.":"No se registró lluvia en este periodo.";chips([["Total del periodo",r1(v.reduce(function(a,b){return a+b},0))]]);
+ make({type:"bar",data:{labels:k.map(function(d){return d.slice(8,10)+"/"+d.slice(5,7)}),datasets:[{label:"Lluvia por día",data:v,backgroundColor:"#2a6fa8bb",borderRadius:6}]},options:opts(c)})}
 function social(el,nombre,url,ic,handle){el.innerHTML='<div class="fb-card"><span class="ic '+ic+'"><svg><use href="#i-'+ic+'"/></svg></span><b>'+handle+'</b><p>Mira nuestras publicaciones más recientes.</p><a class="btn" href="'+url+'" target="_blank" rel="noopener">Ver en '+nombre+'</a></div>'}
 var FBL="https://www.facebook.com/profile.php?id=61556795847342";
 function fb(){var el=$("fb"),w=Math.max(180,Math.min(500,el.clientWidth||320));
  if(el.dataset.w&&Math.abs(el.dataset.w-w)<30)return;el.dataset.w=w;
  el.innerHTML='<div class="fbw"><iframe title="Publicaciones de Facebook" src="https://www.facebook.com/plugins/page.php?href='+encodeURIComponent(FB_PAGE_URL)+'&tabs=timeline&width='+w+'&height=560&small_header=true&hide_cover=true&show_facepile=false" width="'+w+'" height="560" style="border:0;overflow:hidden;color-scheme:light" loading="lazy"></iframe></div>'}
-var rt;if(FB_PAGE_URL){fb();addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(fb,300)})}else social($("fb"),"Facebook",FBL,"fb","Facebook");
-if(!$("ig").children.length)social($("ig"),"Instagram","https://www.instagram.com/agrososteniblepiura/","ig","@agrososteniblepiura");
+var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){if($("novedades").classList.contains("on"))fbShow()},300)});
+function fbShow(){if(FB_PAGE_URL)fb();else social($("fb"),"Facebook",FBL,"fb","Facebook")}
 var mb=$("mb"),mn=$("menu");
 function cm(o){mn.classList.toggle("open",o);mb.setAttribute("aria-expanded",o);mb.setAttribute("aria-label",o?"Cerrar menú":"Abrir menú")}
 mb.addEventListener("click",function(e){e.stopPropagation();cm(!mn.classList.contains("open"))});
 mn.addEventListener("click",function(e){if(e.target.tagName=="A")cm(false)});
 document.addEventListener("click",function(e){if(!mn.contains(e.target))cm(false)});
 addEventListener("keydown",function(e){if(e.key=="Escape")cm(false)});
-if(window.IntersectionObserver){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)document.querySelectorAll("nav a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")=="#"+e.target.id)})})},{rootMargin:"-45% 0px -50% 0px"});document.querySelectorAll("section[id]").forEach(function(x){io.observe(x)})}
-sel.addEventListener("change",draw);
-per.addEventListener("change",function(){$("rg").hidden=per.value!="r";load()});
-$("d1").addEventListener("change",load);$("d2").addEventListener("change",load);
+var V=["inicio","resumen","parametros","novedades","proyecto"];
+function show(){var h=(location.hash||"#inicio").slice(1);if(h=="graficas")h="parametros";if(h=="datos")h="inicio";
+ if(h=="contacto"&&document.querySelector(".view.on"))return;
+ if(V.indexOf(h)<0)h="inicio";
+ V.forEach(function(v){$(v).classList.toggle("on",v==h)});
+ document.querySelectorAll("nav a[data-v]").forEach(function(a){a.classList.toggle("on",a.dataset.v==h)});
+ if(h=="parametros")draw();if(h=="novedades")fbShow();scrollTo(0,0)}
+addEventListener("hashchange",show);
+sel.addEventListener("change",draw);kind.addEventListener("change",draw);
+per.addEventListener("change",load);
 if(window.matchMedia)window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
-latest();load();setInterval(latest,300000);setInterval(load,300000);
+show();latest();load();setInterval(latest,300000);setInterval(load,300000);
 </script>
 </body>
 </html>
