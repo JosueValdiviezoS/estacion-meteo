@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Estación Meteo · Agricultura sostenible y resiliente al cambio climático · Piura</title>
-<meta name="description" content="Clima de hoy, registro de datos y gráficas de la estación meteorológica del proyecto Agricultura sostenible y resiliente al cambio climático, Piura, Perú.">
-<meta property="og:title" content="Estación Meteo · Piura, Perú"><meta property="og:image" content="https://josuevaldiviezos.github.io/estacion-meteo/logo-completo.jpg">
+<title>CECASP · Estación meteorológica · Piura, Perú</title>
+<meta name="description" content="Clima de hoy, registro de datos, ETo y ETc de la estación meteorológica del CECASP (Centro de Experimentación y Capacitación en Agricultura Sostenible y de Precisión), Piura, Perú.">
+<meta property="og:title" content="CECASP · Estación meteorológica · Piura, Perú"><meta property="og:image" content="https://josuevaldiviezos.github.io/estacion-meteo/logo-completo.jpg">
 <link rel="icon" type="image/png" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -105,9 +105,9 @@ footer{background:#0a2f1e;color:#bcd2c2;padding:40px 0 22px;font-size:15px}
 <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="#fff" stroke="none"/></symbol>
 </defs></svg>
 <header class="bar"><div class="wrap bar-in">
- <a class="brand" href="#inicio"><img src="logo.png" alt="Logo del proyecto"><span><b>Agricultura sostenible y resiliente al cambio climático</b><small>Piura, Perú</small></span></a>
+ <a class="brand" href="#inicio" title="Centro de Experimentación y Capacitación en Agricultura Sostenible y de Precisión"><img src="logo.png" alt="Logo del CECASP"><span><b>CECASP</b><small>Estación meteorológica · Piura, Perú</small></span></a>
  <button class="menu-btn" id="mb" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><i><b></b><b></b><b></b></i><span>Menú</span></button>
- <nav id="menu" aria-label="Menú principal"><a href="#inicio" data-v="inicio">Inicio</a><a href="#resumen" data-v="resumen">Resumen del día</a><a href="#parametros" data-v="parametros">Parámetros y gráficas</a><a href="#novedades" data-v="novedades">Novedades</a><a href="#proyecto" data-v="proyecto">Sobre el proyecto</a></nav>
+ <nav id="menu" aria-label="Menú principal"><a href="#inicio" data-v="inicio">Inicio</a><a href="#resumen" data-v="resumen">Resumen del día</a><a href="#parametros" data-v="parametros">Parámetros y gráficas</a><a href="#novedades" data-v="novedades">Novedades</a><a href="#proyecto" data-v="proyecto">Sobre el CECASP</a></nav>
 </div></header>
 
 <div class="view" id="inicio"><section class="hero"><div class="wrap hero-in">
@@ -123,7 +123,7 @@ footer{background:#0a2f1e;color:#bcd2c2;padding:40px 0 22px;font-size:15px}
 
 <section class="s view" id="parametros"><div class="wrap"><h2>Parámetros y gráficas</h2><p class="sub">Elige el parámetro y el periodo que quieres ver.</p>
 <div class="tools">
- <label>Tipo de gráfica<select id="kind"><option value="line">Evolución en el tiempo</option><option value="daily">Resumen diario de temperatura</option><option value="dual">Temperatura y humedad</option><option value="rose">Rosa de los vientos</option><option value="rain">Lluvia por día</option></select></label>
+ <label>Tipo de gráfica<select id="kind"><option value="line">Evolución en el tiempo</option><option value="daily">Resumen diario de temperatura</option><option value="dual">Temperatura y humedad</option><option value="rose">Rosa de los vientos</option><option value="rain">Lluvia por día</option><option value="eto">Evapotranspiración de referencia (ETo)</option><option value="etc">Agua que necesita cada cultivo (ETc)</option></select></label>
  <label id="pw">Parámetro<select id="par"></select></label>
  <label>Periodo<select id="per"><option value="1" selected>Hoy</option><option value="7">Últimos 7 días</option></select></label>
 </div>
@@ -131,15 +131,15 @@ footer{background:#0a2f1e;color:#bcd2c2;padding:40px 0 22px;font-size:15px}
 <div class="chart"><canvas id="ch" aria-label="Gráfica del parámetro elegido"></canvas></div>
 <h3 style="font-size:22px;margin:28px 0 0">Registro de lecturas</h3>
 <div class="scroll" style="margin-top:12px"><table><thead id="th"></thead><tbody id="tb"></tbody></table></div>
-<p class="sub" style="margin-top:14px"><a href="data/lecturas.csv" download>Descargar el historial completo (CSV)</a></p>
+<p class="sub" style="margin-top:14px"><a href="data/lecturas.csv" download>Descargar el historial completo (CSV)</a> · <a href="data/diario.csv" download>ETo diaria (CSV)</a> · <a href="data/etc_diaria.csv" download>ETc por cultivo (CSV)</a></p>
 </div></section>
 
 <section class="s view" id="novedades"><div class="wrap"><h2>Novedades</h2><p class="sub">Lo último que publicamos en Facebook. También estamos en Instagram.</p>
 <div class="fbcol"><article class="card"><div id="fb"></div></article><p style="margin-top:14px"><a class="btn" href="https://www.facebook.com/profile.php?id=61556795847342" target="_blank" rel="noopener">Abrir en Facebook</a> <a class="btn" href="https://www.instagram.com/agrososteniblepiura/" target="_blank" rel="noopener">Ver Instagram</a></p></div></div></section>
 
-<section class="s view" id="proyecto"><div class="wrap"><h2>Sobre el proyecto</h2>
+<section class="s view" id="proyecto"><div class="wrap"><h2>Sobre el CECASP</h2>
 <div class="two">
- <div><p>«Agricultura sostenible y resiliente al cambio climático» es un proyecto de Piura, Perú. Esta página reúne los datos de su estación meteorológica: el clima de hoy, el registro histórico y gráficas para analizar periodos concretos.</p></div>
+ <div><p>El CECASP (Centro de Experimentación y Capacitación en Agricultura Sostenible y de Precisión) es un centro de Piura, Perú. Esta página reúne los datos de su estación meteorológica: el clima de hoy, el registro histórico y gráficas para analizar periodos concretos.</p></div>
  <div><h3 style="font-size:18px;margin-bottom:8px">Qué mide la estación</h3><ul><li>Temperatura del aire: media, mínima y máxima del día</li><li>Humedad relativa: media, mínima y máxima del día</li><li>Punto de rocío y presión atmosférica</li><li>Viento: velocidad media, mínima y ráfaga máxima; dirección y su constancia</li><li>Radiación solar</li><li>Precipitación: por intervalo y total diario</li><li>Suelo: temperatura y humedad</li><li>Humedad de la hoja</li><li>Equipo: voltaje de la batería</li></ul></div>
 </div></div></section>
 
@@ -147,13 +147,13 @@ footer{background:#0a2f1e;color:#bcd2c2;padding:40px 0 22px;font-size:15px}
 
 <footer id="contacto"><div class="wrap">
  <div class="fgrid">
-  <div class="fl"><img src="logo.png" alt="Logo del proyecto"><div><b>Agricultura sostenible y resiliente al cambio climático</b><span>Piura, Perú</span></div></div>
+  <div class="fl"><img src="logo.png" alt="Logo del CECASP"><div><b>CECASP</b><span>Centro de Experimentación y Capacitación en Agricultura Sostenible y de Precisión · Piura, Perú</span></div></div>
   <div class="fc"><h3>Contacto</h3>
    <a class="ct2" href="mailto:agrososteniblepiura@gmail.com"><span class="ic mail"><svg><use href="#i-mail"/></svg></span>agrososteniblepiura@gmail.com</a>
    <a class="ct2" href="https://www.facebook.com/profile.php?id=61556795847342" target="_blank" rel="noopener"><span class="ic fb"><svg><use href="#i-fb"/></svg></span>Síguenos en Facebook</a>
    <a class="ct2" href="https://www.instagram.com/agrososteniblepiura/" target="_blank" rel="noopener"><span class="ic ig"><svg><use href="#i-ig"/></svg></span>@agrososteniblepiura</a></div>
  </div>
- <p class="copy">© Agricultura sostenible y resiliente al cambio climático · Datos de la estación vía DPS-Promatic.</p>
+ <p class="copy">© CECASP · Centro de Experimentación y Capacitación en Agricultura Sostenible y de Precisión · Datos de la estación vía DPS-Promatic.</p>
 </div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -209,7 +209,7 @@ function latest(){datos().then(function(A){var L=A[A.length-1],m=Math.round((Dat
  $("estado").textContent=(m>45?"Sin lecturas nuevas. ":"")+"Última lectura: "+dm(L.ts)+" (hace "+m+" min)";
 }).catch(function(){$("estado").textContent="Aún no hay datos para mostrar"})}
 var AV=null;
-function span(){var v=+per.value,b=AV?AV[1]:iso(new Date(Date.now()-5*36e5));return [iso(new Date(Date.parse(b)-(v-1)*864e5)),b]}
+function span(){var v=+per.value;if(!v||v>30)v=30;var b=AV?AV[1]:iso(new Date(Date.now()-5*36e5));return [iso(new Date(Date.parse(b)-(v-1)*864e5)),b]}
 function fillPer(A){AV=[A[0].ts.slice(0,10),A[A.length-1].ts.slice(0,10)]}
 function load(){datos().then(function(A){fillPer(A);var s=span();D=A.filter(function(r){var d=r.ts.slice(0,10);return d>=s[0]&&d<=s[1]});if($("parametros").classList.contains("on"))draw();table()}).catch(function(){})}
 function table(){$("th").innerHTML="<tr><th>Fecha y hora</th>"+TK.map(function(x){return "<th>"+x[0]+(x[2]?"<small>"+x[2]+"</small>":"")+"</th>"}).join("")+"</tr>";$("tb").innerHTML=D.slice(-60).reverse().map(function(r){return "<tr><td>"+dm(r.ts)+"</td>"+TK.map(function(x){var v=r[x[1]];return "<td>"+(v==null?"–":v)+"</td>"}).join("")+"</tr>"}).join("")}
@@ -221,7 +221,10 @@ function make(cfg){try{chart=new Chart($("ch"),cfg)}catch(e){}}
 function opts(c,extra){var o={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:c.t}}},scales:{x:{ticks:{color:c.t,maxTicksLimit:10},grid:{color:c.g}},y:{ticks:{color:c.t},grid:{color:c.g}}}};for(var k in extra){if(k=="scales")for(var s in extra.scales)o.scales[s]=extra.scales[s];else o[k]=extra[k]}return o}
 function series(){var lab=[],prev=null,idx=[];D.forEach(function(r,i){var t=new Date(r.ts).getTime();if(prev&&t-prev>45*6e4){lab.push("");idx.push(null)}lab.push(per.value=="1"?r.ts.slice(11):dm(r.ts));idx.push(i);prev=t});return{lab:lab,idx:idx}}
 function line(key){var q=series();return q.idx.map(function(i){return i==null?null:D[i][key]})}
-function draw(){if(chart)chart.destroy();var k=kind.value;$("pw").hidden=k!="line";$("hint").textContent="";$("stats").innerHTML="";if(!D.length)return;
+var tk=0;
+function draw(){if(chart)chart.destroy();var k=kind.value,t=++tk;$("pw").hidden=k!="line";$("hint").textContent="";$("stats").innerHTML="";
+ if(k=="eto")return gEto(t);if(k=="etc")return gEtc(t);
+ if(!D.length)return;
  ({line:gLine,daily:gDaily,dual:gDual,rose:gRose,rain:gRain})[k]()}
 function gLine(){var p=P[sel.value],c=ax(),v=D.map(function(r){return r[p[1]]}).filter(function(x){return x!=null}),u=p[3]?" "+p[3]:"",n=function(x){return r1(x)+u};
  $("hint").textContent=H[p[1]]||"";
@@ -242,6 +245,33 @@ function gRose(){var c=ax(),N=["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SS
  var pct=cnt.map(function(x){return tot?r1(x/tot*100):0}),top=pct.indexOf(Math.max.apply(0,pct));
  $("hint").textContent="Cada sector indica de dónde sopla el viento y qué porcentaje del tiempo.";chips([["Dirección más frecuente",N[top]+" ("+pct[top]+" %)"]]);
  make({type:"polarArea",data:{labels:N,datasets:[{data:pct,backgroundColor:"rgba(27,122,69,.55)",borderColor:"#1b7a45",borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(x){var j=x.dataIndex;return pct[j]+" % del tiempo · viento medio "+(cnt[j]?Math.round(sp[j]/cnt[j]):0)+" km/h"}}}},scales:{r:{startAngle:-11.25,ticks:{color:c.t,backdropColor:"transparent",callback:function(v){return v+" %"}},grid:{color:c.g},angleLines:{color:c.g},pointLabels:{display:true,centerPointLabels:true,color:c.t,font:{size:13}}}}}})}
+// ---- ETo y ETc diarias (data/diario.csv y data/etc_diaria.csv, calculadas por eto.py) ----
+var PO={s:[["1","Hoy"],["7","Últimos 7 días"],["30","Últimos 30 días"]],l:[["7","Últimos 7 días"],["30","Últimos 30 días"],["365","Último año"],["0","Todo el historial"]]},CC=["#1b7a45","#2a6fa8","#c98a00","#d9480f","#7c3aed","#0f766e","#b45309","#be185d","#52695c","#4d7c0f","#1d4ed8"];
+function syncPer(){var k=kind.value,a=(k=="eto"||k=="etc")?PO.l:PO.s,cur=per.value,ok=a.some(function(x){return x[0]==cur});per.innerHTML=a.map(function(x){return "<option value="+x[0]+">"+x[1]+"</option>"}).join("");per.value=ok?cur:a[0][0]}
+var CA={};
+function csv(u){var c=CA[u];if(c&&Date.now()-c.t<6e5)return c.p;var p=fetch(u+"?t="+Math.floor(Date.now()/6e5)).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(t){var L=t.trim().split(/\r?\n/),h=L.shift().split(",");return L.filter(Boolean).map(function(l){var q=l.split(","),o={};h.forEach(function(k,i){o[k]=q[i]});return o})});CA[u]={t:Date.now(),p:p};p.catch(function(){delete CA[u]});return p}
+function win(R){var v=+per.value;if(!v||!R.length)return R;var s=iso(new Date(Date.parse(R[R.length-1].fecha)-(v-1)*864e5));return R.filter(function(r){return r.fecha>=s})}
+function dlab(d,largo){return d.slice(8,10)+"/"+d.slice(5,7)+(largo?"/"+d.slice(2,4):"")}
+function gEto(t){csv("data/diario.csv").then(function(A){if(t!=tk)return;var c=ax(),R=win(A.filter(function(r){return r.eto_mm!==""&&r.eto_mm!=null}));
+ if(!R.length){$("hint").textContent="Aún no hay datos de ETo para este periodo.";return}
+ var ok=R.filter(function(r){return r.completo=="True"}),tot=ok.reduce(function(a,r){return a+ +r.eto_mm},0),lg=R.length>60;
+ $("hint").textContent="ETo: agua que pierde cada día un pasto bien regado (1 mm = 1 litro por m²), calculada con los datos de la estación (FAO-56 Penman-Monteith). Las barras claras son días con lecturas incompletas: el valor es menor al real y no se suma.";
+ chips([["Promedio diario",ok.length?r1(tot/ok.length)+" mm":"–"],["Acumulado (solo días completos)",r1(tot)+" mm"],["Días completos",ok.length+" de "+R.length]]);
+ make({type:"bar",data:{labels:R.map(function(r){return dlab(r.fecha,lg)}),datasets:[{label:"ETo (mm/día)",data:R.map(function(r){return +r.eto_mm}),backgroundColor:R.map(function(r){return r.completo=="True"?"#1b7a45cc":"#1b7a4544"}),borderRadius:lg?0:4}]},
+  options:opts(c,{plugins:{legend:{display:false},tooltip:{callbacks:{title:function(x){return R[x[0].dataIndex].fecha},label:function(x){var r=R[x.dataIndex];return r1(+r.eto_mm*10)/10+" mm/día"+(r.completo=="True"?"":" · día incompleto ("+r.lecturas+" de 48 lecturas)")}}}}})})
+ }).catch(function(){if(t==tk)$("hint").textContent="No se pudieron cargar los datos diarios."})}
+function gEtc(t){csv("data/etc_diaria.csv").then(function(A){if(t!=tk)return;var c=ax(),R=win(A.filter(function(r){return r.etc_mm!==""&&r.etc_mm!=null}));
+ if(!R.length){$("hint").textContent="Aún no hay datos de ETc para este periodo.";return}
+ var fe=[],ids=[],nom={},M={},sum={},cu={};
+ R.forEach(function(r){if(fe.indexOf(r.fecha)<0)fe.push(r.fecha);if(ids.indexOf(r.id)<0){ids.push(r.id);cu[r.cultivo]=(cu[r.cultivo]||0)+1}(M[r.id]=M[r.id]||{})[r.fecha]=r;nom[r.id]=r});
+ fe.sort();var lg=fe.length>60;
+ var ds=ids.map(function(id,i){var n=nom[id],lab=n.cultivo+(cu[n.cultivo]>1?" · "+n.campo:""),col=CC[i%CC.length],tot=0;
+  var pts=fe.map(function(d){return M[id][d]||null});pts.forEach(function(r){if(r&&r.completo=="True")tot+=+r.etc_mm});sum[id]=[lab,tot];
+  return{label:lab,data:pts.map(function(r){return r?+r.etc_mm:null}),borderColor:col,backgroundColor:col,tension:.25,spanGaps:false,pointRadius:lg?0:3,pointBackgroundColor:pts.map(function(r){return r&&r.completo!="True"?"#ffffff":col}),borderWidth:2,_r:pts}});
+ $("hint").textContent="ETc = Kc × ETo: agua que necesita cada lote por día (1 mm = 1 litro por m²). El Kc cambia con la etapa del cultivo (inicial, desarrollo, media y final). Los puntos vacíos son días con ETo incompleta y no se suman al acumulado.";
+ chips(ids.map(function(id){return [sum[id][0],r1(sum[id][1])+" mm"]}));
+ make({type:"line",data:{labels:fe.map(function(d){return dlab(d,lg)}),datasets:ds},options:opts(c,{plugins:{legend:{labels:{color:c.t}},tooltip:{callbacks:{title:function(x){return fe[x[0].dataIndex]},label:function(x){var r=x.dataset._r[x.dataIndex];return r?x.dataset.label+": "+r.etc_mm+" mm (Kc "+(+r.kc).toFixed(2)+", "+r.etapa.toLowerCase()+")":null}}}}})})
+ }).catch(function(){if(t==tk)$("hint").textContent="No se pudieron cargar los datos diarios."})}
 function gRain(){var m={},c=ax();D.forEach(function(r){var d=r.ts.slice(0,10);m[d]=Math.max(m[d]||0,r.drf||0)});var k=Object.keys(m).sort(),v=k.map(function(d){return m[d]});
  $("hint").textContent=Math.max.apply(0,v)>0?"Lluvia acumulada en cada día según el sensor de la estación.":"No se registró lluvia en este periodo.";chips([["Total del periodo",r1(v.reduce(function(a,b){return a+b},0))]]);
  make({type:"bar",data:{labels:k.map(function(d){return d.slice(8,10)+"/"+d.slice(5,7)}),datasets:[{label:"Lluvia por día",data:v,backgroundColor:"#2a6fa8bb",borderRadius:6}]},options:opts(c)})}
@@ -266,10 +296,10 @@ function show(){var h=(location.hash||"#inicio").slice(1);if(h=="graficas")h="pa
  document.querySelectorAll("nav a[data-v]").forEach(function(a){a.classList.toggle("on",a.dataset.v==h)});
  if(h=="parametros")draw();if(h=="novedades")fbShow();scrollTo(0,0)}
 addEventListener("hashchange",show);
-sel.addEventListener("change",draw);kind.addEventListener("change",draw);
+sel.addEventListener("change",draw);kind.addEventListener("change",function(){syncPer();load()});
 per.addEventListener("change",load);
 if(window.matchMedia)window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
-show();latest();load();setInterval(latest,300000);setInterval(load,300000);
+syncPer();show();latest();load();setInterval(latest,300000);setInterval(load,300000);
 </script>
 </body>
 </html>

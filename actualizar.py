@@ -82,6 +82,7 @@ def guardar(filas):
     rows = [[k] + [numero(filas[k][c]) for c in PANTALLA[1:]] for k in orden if k >= corte]
     with open("data/reciente.json", "w", encoding="utf-8") as f:
         json.dump({"cols": PANTALLA, "rows": rows}, f, separators=(",", ":"))
+    import eto; eto.main()   # recalcula data/diario.csv (ETo diaria FAO-56) con el historial completo
 
 if __name__ == "__main__":
     main()
