@@ -1,0 +1,95 @@
+fecha,id,cultivo,campo,dia_en_campo,etapa,kc,eto_mm,etc_mm,lamina_bruta_mm,completo
+2026-10-12,11,Pak choi,Campo Experimental 4,1,Inicial,0.7,3.12,2.18,2.43,False
+2026-10-13,6,Caupí,Campo Experimental 2,1,Inicial,0.4,5.54,2.22,2.46,False
+2026-10-13,9,Maní,Campo Experimental 3,1,Inicial,0.4,5.54,2.22,2.46,False
+2026-10-13,11,Pak choi,Campo Experimental 4,2,Inicial,0.7,5.54,3.88,4.31,False
+2026-10-14,1,Berenjena,Campo Experimental 1,1,Inicial,0.6,6.47,3.88,4.32,False
+2026-10-14,4,Pepinillo,Campo Experimental 1,1,Inicial,0.6,6.47,3.88,4.32,False
+2026-10-14,5,Frijol,Campo Experimental 2,1,Inicial,0.5,6.47,3.24,3.6,False
+2026-10-14,6,Caupí,Campo Experimental 2,2,Inicial,0.4,6.47,2.59,2.88,False
+2026-10-14,9,Maní,Campo Experimental 3,2,Inicial,0.4,6.47,2.59,2.88,False
+2026-10-14,10,Nabo,Campo Experimental 3,1,Inicial,0.5,6.47,3.24,3.6,False
+2026-10-14,11,Pak choi,Campo Experimental 4,3,Inicial,0.7,6.47,4.53,5.04,False
+2026-10-14,13,Quinua,Campo Experimental 4,1,Inicial,0.5,6.47,3.24,3.6,False
+2026-10-14,14,Lechuga,Campo Experimental 2,1,Inicial,0.7,6.47,4.53,5.04,False
+2026-10-20,1,Berenjena,Campo Experimental 1,7,Inicial,0.6,2.71,1.62,1.8,False
+2026-10-20,4,Pepinillo,Campo Experimental 1,7,Inicial,0.6,2.71,1.62,1.8,False
+2026-10-20,5,Frijol,Campo Experimental 2,7,Inicial,0.5,2.71,1.35,1.5,False
+2026-10-20,6,Caupí,Campo Experimental 2,8,Inicial,0.4,2.71,1.08,1.2,False
+2026-10-20,9,Maní,Campo Experimental 3,8,Inicial,0.4,2.71,1.08,1.2,False
+2026-10-20,10,Nabo,Campo Experimental 3,7,Inicial,0.5,2.71,1.35,1.5,False
+2026-10-20,11,Pak choi,Campo Experimental 4,9,Inicial,0.7,2.71,1.89,2.1,False
+2026-10-20,13,Quinua,Campo Experimental 4,7,Inicial,0.5,2.71,1.35,1.5,False
+2026-10-20,14,Lechuga,Campo Experimental 2,7,Inicial,0.7,2.71,1.89,2.1,False
+2026-10-21,1,Berenjena,Campo Experimental 1,8,Inicial,0.6,2.52,1.51,1.68,False
+2026-10-21,4,Pepinillo,Campo Experimental 1,8,Inicial,0.6,2.52,1.51,1.68,False
+2026-10-21,5,Frijol,Campo Experimental 2,8,Inicial,0.5,2.52,1.26,1.4,False
+2026-10-21,6,Caupí,Campo Experimental 2,9,Inicial,0.4,2.52,1.01,1.12,False
+2026-10-21,9,Maní,Campo Experimental 3,9,Inicial,0.4,2.52,1.01,1.12,False
+2026-10-21,10,Nabo,Campo Experimental 3,8,Inicial,0.5,2.52,1.26,1.4,False
+2026-10-21,11,Pak choi,Campo Experimental 4,10,Inicial,0.7,2.52,1.76,1.96,False
+2026-10-21,13,Quinua,Campo Experimental 4,8,Inicial,0.5,2.52,1.26,1.4,False
+2026-10-21,14,Lechuga,Campo Experimental 2,8,Inicial,0.7,2.52,1.76,1.96,False
+2026-10-22,1,Berenjena,Campo Experimental 1,9,Inicial,0.6,3.63,2.18,2.42,False
+2026-10-22,4,Pepinillo,Campo Experimental 1,9,Inicial,0.6,3.63,2.18,2.42,False
+2026-10-22,5,Frijol,Campo Experimental 2,9,Inicial,0.5,3.63,1.81,2.02,False
+2026-10-22,6,Caupí,Campo Experimental 2,10,Inicial,0.4,3.63,1.45,1.61,False
+2026-10-22,9,Maní,Campo Experimental 3,10,Inicial,0.4,3.63,1.45,1.61,False
+2026-10-22,10,Nabo,Campo Experimental 3,9,Inicial,0.5,3.63,1.81,2.02,False
+2026-10-22,11,Pak choi,Campo Experimental 4,11,Inicial,0.7,3.63,2.54,2.82,False
+2026-10-22,13,Quinua,Campo Experimental 4,9,Inicial,0.5,3.63,1.81,2.02,False
+2026-10-22,14,Lechuga,Campo Experimental 2,9,Inicial,0.7,3.63,2.54,2.82,False
+2026-10-23,1,Berenjena,Campo Experimental 1,10,Inicial,0.6,4.18,2.51,2.79,True
+2026-10-23,4,Pepinillo,Campo Experimental 1,10,Inicial,0.6,4.18,2.51,2.79,True
+2026-10-23,5,Frijol,Campo Experimental 2,10,Inicial,0.5,4.18,2.09,2.32,True
+2026-10-23,6,Caupí,Campo Experimental 2,11,Inicial,0.4,4.18,1.67,1.86,True
+2026-10-23,9,Maní,Campo Experimental 3,11,Inicial,0.4,4.18,1.67,1.86,True
+2026-10-23,10,Nabo,Campo Experimental 3,10,Inicial,0.5,4.18,2.09,2.32,True
+2026-10-23,11,Pak choi,Campo Experimental 4,12,Inicial,0.7,4.18,2.92,3.25,True
+2026-10-23,13,Quinua,Campo Experimental 4,10,Inicial,0.5,4.18,2.09,2.32,True
+2026-10-23,14,Lechuga,Campo Experimental 2,10,Inicial,0.7,4.18,2.92,3.25,True
+2026-10-24,1,Berenjena,Campo Experimental 1,11,Inicial,0.6,3.92,2.35,2.62,True
+2026-10-24,4,Pepinillo,Campo Experimental 1,11,Inicial,0.6,3.92,2.35,2.62,True
+2026-10-24,5,Frijol,Campo Experimental 2,11,Inicial,0.5,3.92,1.96,2.18,True
+2026-10-24,6,Caupí,Campo Experimental 2,12,Inicial,0.4,3.92,1.57,1.74,True
+2026-10-24,9,Maní,Campo Experimental 3,12,Inicial,0.4,3.92,1.57,1.74,True
+2026-10-24,10,Nabo,Campo Experimental 3,11,Inicial,0.5,3.92,1.96,2.18,True
+2026-10-24,11,Pak choi,Campo Experimental 4,13,Desarrollo,0.719,3.92,2.82,3.14,True
+2026-10-24,13,Quinua,Campo Experimental 4,11,Inicial,0.5,3.92,1.96,2.18,True
+2026-10-24,14,Lechuga,Campo Experimental 2,11,Desarrollo,0.717,3.92,2.81,3.13,True
+2026-10-25,1,Berenjena,Campo Experimental 1,12,Inicial,0.6,2.47,1.48,1.65,False
+2026-10-25,4,Pepinillo,Campo Experimental 1,12,Inicial,0.6,2.47,1.48,1.65,False
+2026-10-25,5,Frijol,Campo Experimental 2,12,Inicial,0.5,2.47,1.24,1.37,False
+2026-10-25,6,Caupí,Campo Experimental 2,13,Inicial,0.4,2.47,0.99,1.1,False
+2026-10-25,9,Maní,Campo Experimental 3,13,Inicial,0.4,2.47,0.99,1.1,False
+2026-10-25,10,Nabo,Campo Experimental 3,12,Inicial,0.5,2.47,1.24,1.37,False
+2026-10-25,11,Pak choi,Campo Experimental 4,14,Desarrollo,0.747,2.47,1.85,2.05,False
+2026-10-25,13,Quinua,Campo Experimental 4,12,Inicial,0.5,2.47,1.24,1.37,False
+2026-10-25,14,Lechuga,Campo Experimental 2,12,Desarrollo,0.737,2.47,1.82,2.03,False
+2026-10-26,1,Berenjena,Campo Experimental 1,13,Inicial,0.6,2.95,1.77,1.96,False
+2026-10-26,4,Pepinillo,Campo Experimental 1,13,Inicial,0.6,2.95,1.77,1.96,False
+2026-10-26,5,Frijol,Campo Experimental 2,13,Inicial,0.5,2.95,1.47,1.64,False
+2026-10-26,6,Caupí,Campo Experimental 2,14,Inicial,0.4,2.95,1.18,1.31,False
+2026-10-26,9,Maní,Campo Experimental 3,14,Inicial,0.4,2.95,1.18,1.31,False
+2026-10-26,10,Nabo,Campo Experimental 3,13,Inicial,0.5,2.95,1.47,1.64,False
+2026-10-26,11,Pak choi,Campo Experimental 4,15,Desarrollo,0.776,2.95,2.28,2.54,False
+2026-10-26,13,Quinua,Campo Experimental 4,13,Inicial,0.5,2.95,1.47,1.64,False
+2026-10-26,14,Lechuga,Campo Experimental 2,13,Desarrollo,0.757,2.95,2.23,2.48,False
+2026-10-27,1,Berenjena,Campo Experimental 1,14,Inicial,0.6,3.51,2.1,2.34,True
+2026-10-27,4,Pepinillo,Campo Experimental 1,14,Desarrollo,0.617,3.51,2.17,2.41,True
+2026-10-27,5,Frijol,Campo Experimental 2,14,Inicial,0.5,3.51,1.75,1.95,True
+2026-10-27,6,Caupí,Campo Experimental 2,15,Inicial,0.4,3.51,1.4,1.56,True
+2026-10-27,9,Maní,Campo Experimental 3,15,Inicial,0.4,3.51,1.4,1.56,True
+2026-10-27,10,Nabo,Campo Experimental 3,14,Inicial,0.5,3.51,1.75,1.95,True
+2026-10-27,11,Pak choi,Campo Experimental 4,16,Desarrollo,0.804,3.51,2.82,3.13,True
+2026-10-27,13,Quinua,Campo Experimental 4,14,Inicial,0.5,3.51,1.75,1.95,True
+2026-10-27,14,Lechuga,Campo Experimental 2,14,Desarrollo,0.776,3.51,2.72,3.03,True
+2026-10-28,1,Berenjena,Campo Experimental 1,15,Inicial,0.6,3.89,2.34,2.6,False
+2026-10-28,4,Pepinillo,Campo Experimental 1,15,Desarrollo,0.638,3.89,2.48,2.76,False
+2026-10-28,5,Frijol,Campo Experimental 2,15,Inicial,0.5,3.89,1.95,2.16,False
+2026-10-28,6,Caupí,Campo Experimental 2,16,Inicial,0.4,3.89,1.56,1.73,False
+2026-10-28,9,Maní,Campo Experimental 3,16,Inicial,0.4,3.89,1.56,1.73,False
+2026-10-28,10,Nabo,Campo Experimental 3,15,Desarrollo,0.523,3.89,2.03,2.26,False
+2026-10-28,11,Pak choi,Campo Experimental 4,17,Desarrollo,0.832,3.89,3.24,3.6,False
+2026-10-28,13,Quinua,Campo Experimental 4,15,Inicial,0.5,3.89,1.95,2.16,False
+2026-10-28,14,Lechuga,Campo Experimental 2,15,Desarrollo,0.796,3.89,3.1,3.44,False

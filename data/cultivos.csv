@@ -1,0 +1,19 @@
+id,cultivo,variedad,campo,ambiente,tipo_siembra,fecha_siembra,fecha_trasplante,fecha_cosecha,l_ini,l_des,l_med,l_fin,kc_ini,kc_med,kc_fin,factor_ambiente,activo
+1,Berenjena,,Campo Experimental 1,Campo,Trasplante,2026-09-14,2026-10-14,2027-02-11,30,40,40,20,0.6,1.05,0.9,1.0,SI
+2,Albahaca,Genovesa,Campo Experimental 1,Campo,Trasplante,2026-09-15,2026-10-09,2027-01-13,20,30,35,15,0.6,1.0,0.9,1.0,NO
+3,Tomate,Wantia F1,Campo Experimental 1,Campo,Trasplante,2026-09-15,2026-10-12,2027-02-12,30,40,40,25,0.6,1.15,0.8,1.0,NO
+4,Pepinillo,Sagro F1,Campo Experimental 1,Campo,Trasplante,2026-09-18,2026-10-14,2026-12-21,20,30,40,15,0.6,1.0,0.75,1.0,SI
+5,Frijol,Slenderette,Campo Experimental 2,Campo,Directa,2026-10-14,,2026-12-28,20,30,30,10,0.5,1.05,0.9,1.0,SI
+6,Caupí,,Campo Experimental 2,Campo,Directa,2026-10-13,,2027-02-10,15,15,40,15,0.4,1.15,0.5,1.0,SI
+7,Girasol,,Campo Experimental 2,Campo,Trasplante,2026-09-26,2026-10-10,2027-01-04,25,35,45,25,0.35,1.0,0.35,1.0,NO
+8,Maíz morado,,Campo Experimental 2,Campo,Directa,2026-10-12,,2027-02-09,30,40,50,30,0.3,1.2,0.35,1.0,NO
+9,Maní,,Campo Experimental 3,Campo,Directa,2026-10-13,,2027-02-10,35,35,35,35,0.4,1.15,0.6,1.0,SI
+10,Nabo,Rapa Tonda a Colletto Viola,Campo Experimental 3,Campo,Directa,2026-10-14,,2026-12-23,20,30,35,15,0.5,1.1,0.95,1.0,SI
+11,Pak choi,,Campo Experimental 4,Campo,Trasplante,2026-09-07,2026-10-12,2026-11-17,20,20,15,5,0.7,1.05,0.95,1.0,SI
+12,Ajonjolí,,Campo Experimental 4,Campo,Directa,2026-10-08,,2027-02-05,20,30,40,20,0.35,1.1,0.25,1.0,NO
+13,Quinua,,Campo Experimental 4,Campo,Directa,2026-10-14,,2027-02-11,20,30,30,20,0.5,1.0,0.7,1.0,SI
+14,Lechuga,,Campo Experimental 2,Campo,Trasplante,2026-09-15,2026-10-14,2026-11-20,20,30,15,10,0.7,1.0,0.95,1.0,SI
+15,Pimiento morrón,,Campo Experimental 3,Campo,Trasplante,,,2026-09-30,30,35,40,20,0.6,1.05,0.9,1.0,COSECHADO
+16,Lechuga,Veneranda,Campo Experimental 4,Campo,Trasplante,,,2026-10-21,20,30,15,10,0.7,1.0,0.95,1.0,NO
+17,Ají jalapeño,,Túnel / invernadero,Invernadero,Trasplante,,,2026-11-13,30,35,40,20,0.6,1.05,0.9,0.7,NO
+18,Ají jalapeño,,Túnel / invernadero,Invernadero,Trasplante,,,2026-11-13,30,35,40,20,0.6,1.05,0.9,0.7,NO
