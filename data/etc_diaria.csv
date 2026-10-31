@@ -104,7 +104,7 @@ fecha,id,cultivo,campo,dia_en_campo,etapa,kc,eto_mm,etc_mm,lamina_bruta_mm,compl
 2026-10-29,14,Lechuga,Campo Experimental 2,16,Desarrollo,0.816,5.54,4.52,5.03,True
 2026-10-30,1,Berenjena,Campo Experimental 1,17,Inicial,0.6,4.85,2.91,3.23,True
 2026-10-30,4,Pepinillo,Campo Experimental 1,17,Desarrollo,0.678,4.85,3.29,3.65,True
-2026-10-30,5,Frijol,Campo Experimental 2,17,Desarrollo,0.502,4.85,2.43,2.71,True
+2026-10-30,5,Frijol,Campo Experimental 2,17,Desarrollo,0.502,4.85,2.44,2.71,True
 2026-10-30,6,Caupí,Campo Experimental 2,18,Inicial,0.4,4.85,1.94,2.15,True
 2026-10-30,9,Maní,Campo Experimental 3,18,Inicial,0.4,4.85,1.94,2.15,True
 2026-10-30,10,Nabo,Campo Experimental 3,17,Desarrollo,0.579,4.85,2.81,3.12,True
