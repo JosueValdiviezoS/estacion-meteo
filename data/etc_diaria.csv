@@ -108,6 +108,6 @@ fecha,id,cultivo,campo,dia_en_campo,etapa,kc,eto_mm,etc_mm,lamina_bruta_mm,compl
 2026-10-30,6,Caupí,Campo Experimental 2,18,Inicial,0.4,4.83,1.93,2.15,True
 2026-10-30,9,Maní,Campo Experimental 3,18,Inicial,0.4,4.83,1.93,2.15,True
 2026-10-30,10,Nabo,Campo Experimental 3,17,Desarrollo,0.579,4.83,2.8,3.11,True
-2026-10-30,11,Pak choi,Campo Experimental 4,19,Desarrollo,0.889,4.83,4.3,4.77,True
-2026-10-30,13,Quinua,Campo Experimental 4,17,Inicial,0.5,4.83,2.42,2.68,True
+2026-10-30,11,Pak choi,Campo Experimental 4,19,Desarrollo,0.889,4.83,4.29,4.77,True
+2026-10-30,13,Quinua,Campo Experimental 4,17,Inicial,0.5,4.83,2.41,2.68,True
 2026-10-30,14,Lechuga,Campo Experimental 2,17,Desarrollo,0.836,4.83,4.04,4.48,True
